@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "on_off": "111",
+      "interval": "111",
+      "command": "MoveToHueAndSaturation"
+    },
+    {
+      "on_off": "111",
+      "interval": "111",
+      "direction": "extra_field",
+      "command": "MoveToHueAndSaturation"
+    },
+    {
+      "on_off": "111"
+    },
+    {
+      "interval": "111"
+    },
+    {
+      "command": "This_should_get_send"
+    }
+  ]
+}

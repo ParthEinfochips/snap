@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+    <error file="../src/pybindingcpp.h" line="24" id="uninitMemberVar" severity="style" msg="Member variable &apos;PyBindingCPP::pModule&apos; is not initialized in the constructor."/>
+    <error file="../src/pybindingcpp.h" line="24" id="uninitMemberVar" severity="style" msg="Member variable &apos;PyBindingCPP::pDict&apos; is not initialized in the constructor."/>
+    <error file="../src/pybindingcpp.h" line="24" id="uninitMemberVar" severity="style" msg="Member variable &apos;PyBindingCPP::pFunc&apos; is not initialized in the constructor."/>
+    <error file="../src/ramlparserpycpp.h" line="55" id="variableScope" severity="style" msg="The scope of the variable &apos;pResult&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:
+void f(int x)
+{
+    int i = 0;
+    if (x) {
+        // it&apos;s safe to move &apos;int i = 0;&apos; here
+        for (int n = 0; n &lt; 10; ++n) {
+            // it is possible but not safe to move &apos;int i = 0;&apos; here
+            do_something(&amp;i);
+        }
+    }
+}
+When you see this message it is always safe to reduce the variable scope 1 level."/>
+    <error file="../src/ramlparserpycpp.h" line="55" id="variableScope" severity="style" msg="The scope of the variable &apos;pValue&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:
+void f(int x)
+{
+    int i = 0;
+    if (x) {
+        // it&apos;s safe to move &apos;int i = 0;&apos; here
+        for (int n = 0; n &lt; 10; ++n) {
+            // it is possible but not safe to move &apos;int i = 0;&apos; here
+            do_something(&amp;i);
+        }
+    }
+}
+When you see this message it is always safe to reduce the variable scope 1 level."/>
+    <error file="../../DeviceObject/TransportWrapper.h" line="18" id="noExplicitConstructor" severity="style" msg="Class &apos;TransportWrapper&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided."/>
+    <error file="../../DeviceObject/DeviceObj.h" line="537" id="noExplicitConstructor" severity="style" msg="Struct &apos;DeviceMapEntry&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided."/>
+    <error file="../src/shadow.cc" line="192" id="unusedFunction" severity="style" msg="The function &apos;checkIFDesiredEmpty&apos; is never used."/>
+    <error file="../src/shadowcontroller.cc" line="40" id="unusedFunction" severity="style" msg="The function &apos;createShadow&apos; is never used."/>
+    <error file="../src/shadowcontroller.cc" line="70" id="unusedFunction" severity="style" msg="The function &apos;deviceData&apos; is never used."/>
+    <error file="../src/shadowcontroller.cc" line="84" id="unusedFunction" severity="style" msg="The function &apos;getDeviceState&apos; is never used."/>
+    <error file="../src/shadow.cc" line="65" id="unusedFunction" severity="style" msg="The function &apos;getShadowStatus&apos; is never used."/>
+    <error file="../src/shadowcontroller.cc" line="26" id="unusedFunction" severity="style" msg="The function &apos;isShadowCreated&apos; is never used."/>
+    <error file="../src/shadow.cc" line="75" id="unusedFunction" severity="style" msg="The function &apos;removeFirstDesired&apos; is never used."/>
+    <error file="../src/shadowcontroller.cc" line="117" id="unusedFunction" severity="style" msg="The function &apos;setDeviceState&apos; is never used."/>
+    <error file="../src/shadow.cc" line="70" id="unusedFunction" severity="style" msg="The function &apos;setShadowStatus&apos; is never used."/>
+    <error id="missingInclude" severity="style" msg="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
+</results>

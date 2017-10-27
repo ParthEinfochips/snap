@@ -1,0 +1,118 @@
+\hypertarget{classPyBindingCPP}{}\section{Py\+Binding\+C\+PP Class Reference}
+\label{classPyBindingCPP}\index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+
+
+The base class for python binding it gets inherited by any application needs to inherit and implement its own information.  
+
+
+
+
+{\ttfamily \#include $<$pybindingcpp.\+h$>$}
+
+
+
+Inheritance diagram for Py\+Binding\+C\+PP\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPyBindingCPP_a3985be155b1f5ea718e66883805c5afa}{Py\+Binding\+C\+PP} ()
+\item 
+virtual \hyperlink{classPyBindingCPP_a3ee2e0abd301e95a8154b2834f63f9c4}{$\sim$\+Py\+Binding\+C\+PP} ()
+\item 
+bool \hyperlink{classPyBindingCPP_a95ff00ac88d3f058a2047893572e77dd}{import\+Module} ()
+\item 
+bool \hyperlink{classPyBindingCPP_a95bf1b979f9d1efa2cebca2b6f9a765a}{file\+Function\+Map} ()
+\item 
+void \hyperlink{classPyBindingCPP_ae77c64b7a2686c51c9751fa87fe4f4bd}{deinitialize\+Py} ()
+\item 
+virtual Py\+Object $\ast$ \hyperlink{classPyBindingCPP_aef879a6f875292752d189e10bfd6b332}{call\+Function} ()=0
+\item 
+virtual bool \hyperlink{classPyBindingCPP_a4f722f63ce03ffb0e3972e68b0872200}{usage\+Specific\+Function} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Py\+Object $\ast$ {\bfseries p\+Module}\hypertarget{classPyBindingCPP_aea18b340d1f35af69903e515301212d9}{}\label{classPyBindingCPP_aea18b340d1f35af69903e515301212d9}
+
+\item 
+Py\+Object $\ast$ {\bfseries p\+Dict}\hypertarget{classPyBindingCPP_acaa946faba74ce5d636215ec5aafe2ee}{}\label{classPyBindingCPP_acaa946faba74ce5d636215ec5aafe2ee}
+
+\item 
+Py\+Object $\ast$ {\bfseries p\+Func}\hypertarget{classPyBindingCPP_a7e2448d422be40613e92313ae29a4ddd}{}\label{classPyBindingCPP_a7e2448d422be40613e92313ae29a4ddd}
+
+\item 
+std\+::map$<$ std\+::string, Py\+Object $\ast$ $>$ {\bfseries map\+Function}\hypertarget{classPyBindingCPP_a41904443e0688a29b89ef5989180233f}{}\label{classPyBindingCPP_a41904443e0688a29b89ef5989180233f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class for python binding it gets inherited by any application needs to inherit and implement its own information. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{Py\+Binding\+C\+P\+P()}{PyBindingCPP()}}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Binding\+C\+P\+P\+::\+Py\+Binding\+C\+PP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPyBindingCPP_a3985be155b1f5ea718e66883805c5afa}{}\label{classPyBindingCPP_a3985be155b1f5ea718e66883805c5afa}
+Constructor This initializes python library. \index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!````~Py\+Binding\+C\+PP@{$\sim$\+Py\+Binding\+C\+PP}}
+\index{````~Py\+Binding\+C\+PP@{$\sim$\+Py\+Binding\+C\+PP}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{$\sim$\+Py\+Binding\+C\+P\+P()}{~PyBindingCPP()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Py\+Binding\+C\+P\+P\+::$\sim$\+Py\+Binding\+C\+PP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classPyBindingCPP_a3ee2e0abd301e95a8154b2834f63f9c4}{}\label{classPyBindingCPP_a3ee2e0abd301e95a8154b2834f63f9c4}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!call\+Function@{call\+Function}}
+\index{call\+Function@{call\+Function}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{call\+Function()=0}{callFunction()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Py\+Object$\ast$ Py\+Binding\+C\+P\+P\+::call\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPyBindingCPP_aef879a6f875292752d189e10bfd6b332}{}\label{classPyBindingCPP_aef879a6f875292752d189e10bfd6b332}
+Pure virtual function that calls the actual function. 
+
+Implemented in \hyperlink{classramlParserPyCPP_a7ab09f4772eea48dadc6b8e2240289d9}{raml\+Parser\+Py\+C\+PP}.
+
+\index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!deinitialize\+Py@{deinitialize\+Py}}
+\index{deinitialize\+Py@{deinitialize\+Py}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{deinitialize\+Py()}{deinitializePy()}}]{\setlength{\rightskip}{0pt plus 5cm}void Py\+Binding\+C\+P\+P\+::deinitialize\+Py (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPyBindingCPP_ae77c64b7a2686c51c9751fa87fe4f4bd}{}\label{classPyBindingCPP_ae77c64b7a2686c51c9751fa87fe4f4bd}
+deinitializes the python library. \index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!file\+Function\+Map@{file\+Function\+Map}}
+\index{file\+Function\+Map@{file\+Function\+Map}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{file\+Function\+Map()}{fileFunctionMap()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Py\+Binding\+C\+P\+P\+::file\+Function\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPyBindingCPP_a95bf1b979f9d1efa2cebca2b6f9a765a}{}\label{classPyBindingCPP_a95bf1b979f9d1efa2cebca2b6f9a765a}
+file\+Function\+Map loads and stores the shadow function of the ramlifcations parser. \index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!import\+Module@{import\+Module}}
+\index{import\+Module@{import\+Module}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{import\+Module()}{importModule()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Py\+Binding\+C\+P\+P\+::import\+Module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPyBindingCPP_a95ff00ac88d3f058a2047893572e77dd}{}\label{classPyBindingCPP_a95ff00ac88d3f058a2047893572e77dd}
+This imports the module ramlifcation Parser created by gunjan. Returns true if succeeds and false for failure. \index{Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}!usage\+Specific\+Function@{usage\+Specific\+Function}}
+\index{usage\+Specific\+Function@{usage\+Specific\+Function}!Py\+Binding\+C\+PP@{Py\+Binding\+C\+PP}}
+\subsubsection[{\texorpdfstring{usage\+Specific\+Function()=0}{usageSpecificFunction()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Py\+Binding\+C\+P\+P\+::usage\+Specific\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPyBindingCPP_a4f722f63ce03ffb0e3972e68b0872200}{}\label{classPyBindingCPP_a4f722f63ce03ffb0e3972e68b0872200}
+Pure virtual function that specified by the usage function. 
+
+Implemented in \hyperlink{classramlParserPyCPP_a3950e96ca7bba7f8dd9bac4fe02b698c}{raml\+Parser\+Py\+C\+PP}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+pybindingcpp.\+h\end{DoxyCompactItemize}

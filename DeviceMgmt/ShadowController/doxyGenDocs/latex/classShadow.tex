@@ -1,0 +1,213 @@
+\hypertarget{classShadow}{}\section{Shadow Class Reference}
+\label{classShadow}\index{Shadow@{Shadow}}
+
+
+This is the shadow class which is managing the device and performs the delta information.  
+
+
+
+
+{\ttfamily \#include $<$shadow.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classShadow_a9d3360ddba26f0a9ca2d7d7ff52350d1}{Shadow} ()
+\item 
+\hyperlink{classShadow_aa118e214ce83df6059c49a9b4d05ef9a}{Shadow} (\hyperlink{classshadowController}{shadow\+Controller} $\ast$S\+C\+Ptr, std\+::string \&dev\+Id, json \&raml, const std\+::string \&final\+Dir\+Path\+Temp)
+\item 
+\hyperlink{classShadow_a6fed128929e13ea3d3de6e64da074b8a}{$\sim$\+Shadow} ()
+\item 
+void {\bfseries set\+Config} (int secs, Transport\+Mask mask)\hypertarget{classShadow_abd4c538a5a9b3b4ef2cd65fd6a15a07e}{}\label{classShadow_abd4c538a5a9b3b4ef2cd65fd6a15a07e}
+
+\item 
+void \hyperlink{classShadow_a2367be22583cb66c8b543ee7e96e3baf}{Get\+Device\+State} (std\+::string \&dev\+Id, std\+::string \&data)
+\item 
+void \hyperlink{classShadow_a1cf282e040aaf402edce5666d543d75d}{Data\+Received\+Threaded} (std\+::string \&dev\+Id, std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em A data receiving public function. \end{DoxyCompactList}\item 
+bool \hyperlink{classShadow_a37fef561f7d53ec53ada592e12b2a29f}{Set\+Device\+State} (std\+::string \&dev\+Id, std\+::string \&data)
+\item 
+void \hyperlink{classShadow_aa4b65dbfa488e71a25093f82d1c197a3}{Data\+Received} (std\+::string dev\+Id, std\+::string data)
+\item 
+bool \hyperlink{classShadow_a075895088ad94fd4ba48434544cecb4d}{get\+Shadow\+Status} () const 
+\item 
+void \hyperlink{classShadow_ab45e0f3c046d7de4fe9a11875094c514}{set\+Shadow\+Status} (bool status)
+\item 
+std\+::string \hyperlink{classShadow_a8761b228129cabf07c324cf4b85ae0b6}{Unescape} (const std\+::string \&str)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the shadow class which is managing the device and performs the delta information. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Shadow@{Shadow}!Shadow@{Shadow}}
+\index{Shadow@{Shadow}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Shadow()}{Shadow()}}]{\setlength{\rightskip}{0pt plus 5cm}Shadow\+::\+Shadow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_a9d3360ddba26f0a9ca2d7d7ff52350d1}{}\label{classShadow_a9d3360ddba26f0a9ca2d7d7ff52350d1}
+Constructor. An exception throwing default constructor. \index{Shadow@{Shadow}!Shadow@{Shadow}}
+\index{Shadow@{Shadow}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Shadow(shadow\+Controller $\ast$\+S\+C\+Ptr, std\+::string \&dev\+Id, json \&raml, const std\+::string \&final\+Dir\+Path\+Temp)}{Shadow(shadowController *SCPtr, std::string &devId, json &raml, const std::string &finalDirPathTemp)}}]{\setlength{\rightskip}{0pt plus 5cm}Shadow\+::\+Shadow (
+\begin{DoxyParamCaption}
+\item[{{\bf shadow\+Controller} $\ast$}]{S\+C\+Ptr, }
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{json \&}]{raml, }
+\item[{const std\+::string \&}]{final\+Dir\+Path\+Temp}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_aa118e214ce83df6059c49a9b4d05ef9a}{}\label{classShadow_aa118e214ce83df6059c49a9b4d05ef9a}
+Constructor. An exception throwing parameterized constructor.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShadow_a9d3360ddba26f0a9ca2d7d7ff52350d1}{Shadow()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em S\+C\+Ptr} & pointer to shadow controller i.\+e this class\textquotesingle{}s parent. \\
+\hline
+{\em dev\+Id} & ID of the device which shadow is representing. \\
+\hline
+{\em raml} & R\+A\+ML from which the shadow would be generated. \\
+\hline
+{\em final\+Dir\+Path\+Temp} & Final Directory where the shadow file would be placed. \\
+\hline
+\end{DoxyParams}
+\index{Shadow@{Shadow}!````~Shadow@{$\sim$\+Shadow}}
+\index{````~Shadow@{$\sim$\+Shadow}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{$\sim$\+Shadow()}{~Shadow()}}]{\setlength{\rightskip}{0pt plus 5cm}Shadow\+::$\sim$\+Shadow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_a6fed128929e13ea3d3de6e64da074b8a}{}\label{classShadow_a6fed128929e13ea3d3de6e64da074b8a}
+Destructor Gets the lock and stops the thread. 
+
+\subsection{Member Function Documentation}
+\index{Shadow@{Shadow}!Data\+Received@{Data\+Received}}
+\index{Data\+Received@{Data\+Received}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Data\+Received(std\+::string dev\+Id, std\+::string data)}{DataReceived(std::string devId, std::string data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Shadow\+::\+Data\+Received (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{dev\+Id, }
+\item[{std\+::string}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_aa4b65dbfa488e71a25093f82d1c197a3}{}\label{classShadow_aa4b65dbfa488e71a25093f82d1c197a3}
+This is the function that would receive the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & ID of the Device. \\
+\hline
+{\em data} & payload for the device. \\
+\hline
+\end{DoxyParams}
+\index{Shadow@{Shadow}!Data\+Received\+Threaded@{Data\+Received\+Threaded}}
+\index{Data\+Received\+Threaded@{Data\+Received\+Threaded}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Data\+Received\+Threaded(std\+::string \&dev\+Id, std\+::string \&data)}{DataReceivedThreaded(std::string &devId, std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Shadow\+::\+Data\+Received\+Threaded (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_a1cf282e040aaf402edce5666d543d75d}{}\label{classShadow_a1cf282e040aaf402edce5666d543d75d}
+
+
+A data receiving public function. 
+
+An asynchronous task based function that will be spawned.
+
+The arguments are device\+ID and the data is telemetry/notification data sent by the device.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShadow_a1cf282e040aaf402edce5666d543d75d}{Data\+Received\+Threaded()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & the first argument. \\
+\hline
+{\em data} & the second argument. \\
+\hline
+\end{DoxyParams}
+\index{Shadow@{Shadow}!Get\+Device\+State@{Get\+Device\+State}}
+\index{Get\+Device\+State@{Get\+Device\+State}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Get\+Device\+State(std\+::string \&dev\+Id, std\+::string \&data)}{GetDeviceState(std::string &devId, std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Shadow\+::\+Get\+Device\+State (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_a2367be22583cb66c8b543ee7e96e3baf}{}\label{classShadow_a2367be22583cb66c8b543ee7e96e3baf}
+Constructor. An exception throwing get device state function.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShadow_a9d3360ddba26f0a9ca2d7d7ff52350d1}{Shadow()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em S\+C\+Ptr} & pointer to shadow controller i.\+e this class\textquotesingle{}s parent. \\
+\hline
+{\em dev\+Id} & ID of the device which shadow is representing. \\
+\hline
+{\em raml} & R\+A\+ML from which the shadow would be generated. \\
+\hline
+{\em final\+Dir\+Path\+Temp} & Final Directory where the shadow file would be placed. \\
+\hline
+\end{DoxyParams}
+\index{Shadow@{Shadow}!get\+Shadow\+Status@{get\+Shadow\+Status}}
+\index{get\+Shadow\+Status@{get\+Shadow\+Status}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{get\+Shadow\+Status() const }{getShadowStatus() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Shadow\+::get\+Shadow\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classShadow_a075895088ad94fd4ba48434544cecb4d}{}\label{classShadow_a075895088ad94fd4ba48434544cecb4d}
+gets the active status.
+
+returns a boolean. Future feature for device active or not. \index{Shadow@{Shadow}!Set\+Device\+State@{Set\+Device\+State}}
+\index{Set\+Device\+State@{Set\+Device\+State}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Set\+Device\+State(std\+::string \&dev\+Id, std\+::string \&data)}{SetDeviceState(std::string &devId, std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Shadow\+::\+Set\+Device\+State (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_a37fef561f7d53ec53ada592e12b2a29f}{}\label{classShadow_a37fef561f7d53ec53ada592e12b2a29f}
+Here the desired property would be set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & ID of the Device. \\
+\hline
+{\em data} & payload for the device. \\
+\hline
+\end{DoxyParams}
+\index{Shadow@{Shadow}!set\+Shadow\+Status@{set\+Shadow\+Status}}
+\index{set\+Shadow\+Status@{set\+Shadow\+Status}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{set\+Shadow\+Status(bool status)}{setShadowStatus(bool status)}}]{\setlength{\rightskip}{0pt plus 5cm}void Shadow\+::set\+Shadow\+Status (
+\begin{DoxyParamCaption}
+\item[{bool}]{status}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_ab45e0f3c046d7de4fe9a11875094c514}{}\label{classShadow_ab45e0f3c046d7de4fe9a11875094c514}
+Sets the status device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status,boolean} & for the shadow being active. \\
+\hline
+\end{DoxyParams}
+Future feature for device active or not. \index{Shadow@{Shadow}!Unescape@{Unescape}}
+\index{Unescape@{Unescape}!Shadow@{Shadow}}
+\subsubsection[{\texorpdfstring{Unescape(const std\+::string \&str)}{Unescape(const std::string &str)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Shadow\+::\+Unescape (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{classShadow_a8761b228129cabf07c324cf4b85ae0b6}{}\label{classShadow_a8761b228129cabf07c324cf4b85ae0b6}
+An unescape function which removes unwanted slash, tab etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & this takes in the payload. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shadow.\+h\item 
+shadow.\+cc\end{DoxyCompactItemize}

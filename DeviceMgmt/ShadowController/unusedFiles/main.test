@@ -1,0 +1,95 @@
+#include <iostream>
+#include <chrono>
+#include "json.hpp"
+#include "jsonCheck.hpp"
+#include <fstream>
+#include <string>
+#include <sstream>
+#include "directoryOPS.h"
+#include "simulatorSC/simulator.h"
+#include "shadowcontroller.h"
+#include <memory>
+
+using namespace nlohmann;
+
+template <typename TimeT = std::chrono::seconds>
+class Benchmark
+{
+public:
+    Benchmark(int num_iterations=100, int throw_away=0);
+
+    template <typename Fun, typename... Args>
+    int benchmark(Fun fun, Args&&... args)
+    {
+        auto t1 = std::chrono::steady_clock::now();
+
+        fun();
+
+        auto t2 = std::chrono::steady_clock::now();
+
+        return std::chrono::duration_cast<TimeT>(t2 - t1).count();
+    }
+
+//    typename TimeT::rep mean() const;
+
+//    typename TimeT::rep standard_deviation() const;
+
+private:
+
+};
+
+int main()
+{
+    auto shadowwPtr = std::make_shared<shadowController> ();
+
+    std::list<std::unique_ptr<simulatorOPC>> listOPCObj;
+
+    struct FileOPS fileobj;
+
+    std::stringstream databuffer;
+
+    std::string buffer;
+
+    std::string path = std::string(RAML_PATH) + "/COLOR_DIMMABLE_LIGHT.raml";
+
+    int status=fileobj.readFromFile(std::move(path), databuffer);
+
+    if(status!=0)
+        std::cout << "some type of error" << std::endl;
+
+    threadedImpl thrdImplObj;
+
+    thrdImplObj.timeOut(1);
+
+    json obj;
+
+    obj["raml"] = databuffer.str();
+
+    std::cout << "Main function print " << obj.dump() << std::endl;
+
+    buffer = obj.dump();
+
+    for(auto i = 0; i < 1; i++)
+    {
+        auto str = std::to_string(i);
+
+        shadowwPtr->createShadow(str, buffer);
+
+        std::unique_ptr<simulatorOPC> simul(new simulatorOPC(str));
+
+        simul->registerCB(std::bind(&shadowController::deviceData, shadowwPtr, std::placeholders::_1));
+
+        simul->startSimulation(thrdImplObj);
+
+        listOPCObj.push_back(std::move(simul));
+    }
+
+    thrdImplObj.startSimulation();
+
+    while(1)
+    {
+        usleep(0.1);
+    }
+
+    return 0;
+}

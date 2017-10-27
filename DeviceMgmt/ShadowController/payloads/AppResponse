@@ -1,0 +1,48 @@
+If I receive a request from an APP, I would be sending the following packet to the blob topic. Also, I would be sending this blob when the request has been serviced at my end. Till that point I would have pushed that request in the desired queue, if I have prior job being executed. Since this queue is the job based queue. Everything will be job based.
+
+{
+    "JOBID": "591ebeb01d41c84a1112310d",
+
+    "requested_by": {
+      "originator": "RE",
+    },
+    "managed_by": {
+      "current_stage": "gateway_shadow"
+    },
+    "created_ts": "2017-07-01T07:51:47.211Z",
+    "status": "DELTA_N_COMMAND_FIRED_SUCCESSFULLY",
+    "request_data": { request payload},
+    "response_data": { response payload }
+    "gwid" : "591e84907123a60e704dd4d1",
+    "deviceid"  : "5957b1b21d41c8075ec88765",
+    "orgid" : "58c3ce458441383a938c5c75"
+ }
+
+Also, my snapshot would be changing, I would be sending that as well over the telemetry topic. And I would be maintaining the shadow.
+ 
+
+{
+  "snapshot": {
+    "on_off": {
+      "reported_value": "on",
+      "desired_value": [],
+      "subproperties": [
+        {
+          "abc": {
+            "reported_value": "on",
+            "desired_value": []
+          }
+        }
+      ]
+    },
+    "onlyget": {
+      "reported_value": "on"
+    },
+    "interval": {
+      "reported_value": "20",
+      "desired_value": []
+    }
+  }
+}
+
+Merging of the historical set states would happen at all tmes.

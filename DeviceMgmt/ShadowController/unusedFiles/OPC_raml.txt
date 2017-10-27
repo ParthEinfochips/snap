@@ -1,0 +1,138 @@
+#%RAML 0.8
+title: Zigbee Color Light Actuator RAML
+baseUri: LightSensor
+version: 1.0-20170309
+schemas:
+  - getSchema: |
+      {
+        "description" : "Zigbee Light Actuator which provides 4 properties: on_off, intensity, saturation & hue",
+        "title": "Light Actuator",
+        "definitions": 
+        {
+          "on_off": 
+          {
+            "type" : "object",
+            "description" : "Turn On/Off light" ,
+            "properties" :
+            {
+              "on_off" : 
+              {
+                "type" : "string",
+                "enum": ["on", "off"]
+              }
+            },
+            "required" : ["on_off"]
+          },
+          "intensity":
+          {
+            "type" : "object",
+            "description" : "Set the intensity value of actuator",
+            "properties" :
+            {
+              "intensity" :
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255,
+                "units" : "cd"
+              }
+            },
+            "required" : ["intensity"]
+          }
+        },
+        "type": "object",
+        "anyOf": [
+          {"$ref": "#/definitions/on_off"},
+          {"$ref": "#/definitions/intensity"}
+        ]
+      }
+  - postSchema: |
+      {
+        "description": "Zigbee Light Actuator which provides 4 properties: on_off, intensity, saturation & hue",
+        "title": "Light Actuator",
+        "definitions": {
+          "on_off": {
+            "type": "object",
+            "description": "Turn On/Off light",
+            "properties": {
+              "on_off": {
+                "type": "string",
+                "enum": ["on","off"]
+              }
+            },
+            "required": ["on_off"]
+          },
+          "intensity": {
+            "type": "object",
+            "description": "Set the intensity value of actuator",
+            "properties": {
+              "intensity": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255,
+                "units" : "cd"
+              }
+            },
+            "required": ["intensity"]
+          },
+          "saturation": {
+            "type": "object",
+            "description": "Set the saturation value of actuator",
+            "properties": {
+              "saturation": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": ["saturation"]
+          },
+          "hue": {
+            "type": "object",
+            "description": "Set the hue value of actuator",
+            "properties": {
+              "hue": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": ["hue"]
+          }
+        },
+        "type": "object",
+        "anyOf": [
+          {"$ref": "#/definitions/on_off"},
+          {"$ref": "#/definitions/intensity"},
+          {"$ref": "#/definitions/saturation"},
+          {"$ref": "#/definitions/hue"}
+        ]
+      }
+/:
+  get:
+    responses: 
+      200:
+        body: 
+          application/json:
+            schema: getSchema
+            example: |
+              {
+                "on_off" : "on"
+              }
+  post:
+    body: 
+      application/json:
+        schema: postSchema
+        example: |
+          {
+            "on_off" : "off"
+          }
+    responses: 
+      200:
+        body: 
+          application/json:
+            schema: postSchema
+            example: |
+              {
+                "on_off" : "off"
+              }

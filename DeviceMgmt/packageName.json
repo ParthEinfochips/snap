@@ -1,0 +1,10 @@
+{
+	"packages":[
+			{
+				"packageName":"DeviceOnboardingApp",
+				"packageType":"APP",
+				"ARGS":1,
+				"duplicate" :1
+			}
+		]
+}

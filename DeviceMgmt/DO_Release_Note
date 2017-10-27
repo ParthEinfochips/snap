@@ -1,0 +1,41 @@
+/*********************************************************************************************************************
+ * Snapbricks Base Package Release Notes version 1.0
+ *
+ * Application Name :- Device Object Application
+ *
+ * Date:- 21-july-2017 
+ *
+ *
+ *********************************************************************************************************************/
+
+
+ Description:-
+
+	Device Object Application is the device protocol based application.
+
+
+ Features:-
+
+	* Handles a single protocol at a time.
+	* Automatically connects/reconnects with the cloud application in the mesh.
+	* In fuses the shadow controller.
+	* Loads the protocol at the start up, according to the configuration.
+	* Fixed alljoyn interface consisting of five functions 1) syncListener 2) AsyncListener 3) CallbackRegister 4) CallBackListener 5) GetRAML.
+	* Has the capability to broadcast device data through out the mesh.
+	* Due to the fixed interface, it receives requests from both mesh applications and cloud applications in the same way.
+	* Shadow Controller is able to differentiate the requests sent from applications and cloud. Based on this, it is able to generate blobs and store those blobs.	
+	* When an application sends the request shadow controller is able to notify cloud and upon completion notifies the source application as well as the cloud.
+	* Shadow Controller maintains the In Progress queue.
+	* Most of the exceptions are handled and concerning source application is notified be it cloud or in mesh application.
+	* Utilizes and handles all the callbacks given by the alljoyn name service.
+	* Shadow Controller is enabled and disabled at compile time.
+
+
+ Known Issues & Scope For Improvements:-
+
+	* Due to less support from cloud shadow controller, the gateway shadow controller multiple properties setting feature is at the moment disabled. 
+	* Some sections of the code can be simplified such as parsing topics, cloud connectivity section can be made into a separate section.  
+	* Commenting can be improved.
+	* Persistent storage.
+	* Dynamic MQTT topic configuration is left out.
+

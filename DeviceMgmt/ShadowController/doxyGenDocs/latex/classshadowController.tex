@@ -1,0 +1,256 @@
+\hypertarget{classshadowController}{}\section{shadow\+Controller Class Reference}
+\label{classshadowController}\index{shadow\+Controller@{shadow\+Controller}}
+
+
+This is the \hyperlink{classshadowController}{shadow\+Controller} class which manages the shadows against their device\+ID and acts as interface between shadows and Devive Object.  
+
+
+
+
+{\ttfamily \#include $<$shadowcontroller.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshadowController_a6b20e008c8897a69644427f16feae567}{shadow\+Controller} ()
+\item 
+\hyperlink{classshadowController_a1634b86b0c3cbeba4bf59893f043ba70}{shadow\+Controller} (Transport\+Mask mask, Service\+Provider $\ast$ptr\+Service\+Provider, Device\+Obj $\ast$ptr)
+\item 
+void \hyperlink{classshadowController_a76614a8a202e8a76a33031ef947a4381}{generate\+Shadows\+From\+Persistent} ()
+\item 
+\hyperlink{classshadowController_a540130f287f68c79333af00f08a6e13b}{$\sim$shadow\+Controller} ()
+\item 
+void \hyperlink{classshadowController_ab5c10b60f81e8733b235d14f6f5cce94}{create\+Shadow} (std\+::string \&dev\+Id, std\+::string \&raml)
+\item 
+void \hyperlink{classshadowController_af9b3a7480ce2b9ed1fef2c1985003462}{get\+Device\+State} (std\+::string \&dev\+Id, std\+::string \&data)
+\item 
+bool \hyperlink{classshadowController_af09ea8c8a031af4508927f4eab6c820e}{set\+Device\+State} (std\+::string \&dev\+Id, std\+::string \&data)
+\item 
+void \hyperlink{classshadowController_aafca8ac3d715c752d529e98340e3cd79}{device\+Data} (std\+::string \&dev\+Id, std\+::string \&data)
+\item 
+bool \hyperlink{classshadowController_a385f84ce9b1db4c264de6389d40d8174}{is\+Shadow\+Created} (std\+::string \&dev\+Id)
+\item 
+void \hyperlink{classshadowController_ab062f91f1a6a7bef68b8ccd4dc5be330}{Send\+Telemetry\+Data\+C\+C\+A\+PP} (std\+::string \&dev\+Id, std\+::string \&payload)
+\item 
+void \hyperlink{classshadowController_a05080635d38b83e6577e89acf3ab3954}{call\+The\+Interface} (Interface\+Name i\+Name, std\+::string \&dev\+Id, std\+::string \&payload)
+\item 
+void \hyperlink{classshadowController_a42b847749d4f2cd926c23706527e6279}{adhoc\+Settings} (std\+::string \&payload)
+\item 
+void \hyperlink{classshadowController_a92a0b607d7683ffde25b40f126c59d1b}{send\+To\+Cloud} (std\+::string \&topic, std\+::string \&payload)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classshadowController}{shadow\+Controller} class which manages the shadows against their device\+ID and acts as interface between shadows and Devive Object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{shadow\+Controller@{shadow\+Controller}!shadow\+Controller@{shadow\+Controller}}
+\index{shadow\+Controller@{shadow\+Controller}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{shadow\+Controller()}{shadowController()}}]{\setlength{\rightskip}{0pt plus 5cm}shadow\+Controller\+::shadow\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a6b20e008c8897a69644427f16feae567}{}\label{classshadowController_a6b20e008c8897a69644427f16feae567}
+Default Constructor.
+
+Primarily used for gtest. \index{shadow\+Controller@{shadow\+Controller}!shadow\+Controller@{shadow\+Controller}}
+\index{shadow\+Controller@{shadow\+Controller}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{shadow\+Controller(\+Transport\+Mask mask, Service\+Provider $\ast$ptr\+Service\+Provider, Device\+Obj $\ast$ptr)}{shadowController(TransportMask mask, ServiceProvider *ptrServiceProvider, DeviceObj *ptr)}}]{\setlength{\rightskip}{0pt plus 5cm}shadow\+Controller\+::shadow\+Controller (
+\begin{DoxyParamCaption}
+\item[{Transport\+Mask}]{mask, }
+\item[{Service\+Provider $\ast$}]{ptr\+Service\+Provider, }
+\item[{Device\+Obj $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a1634b86b0c3cbeba4bf59893f043ba70}{}\label{classshadowController_a1634b86b0c3cbeba4bf59893f043ba70}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em mask} & this is the protocol mask. \\
+\hline
+{\em ptr\+Service\+Provider} & this is the pointer of service provider. \\
+\hline
+{\em ptr} & pointer to device object. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!````~shadow\+Controller@{$\sim$shadow\+Controller}}
+\index{````~shadow\+Controller@{$\sim$shadow\+Controller}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{$\sim$shadow\+Controller()}{~shadowController()}}]{\setlength{\rightskip}{0pt plus 5cm}shadow\+Controller\+::$\sim$shadow\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a540130f287f68c79333af00f08a6e13b}{}\label{classshadowController_a540130f287f68c79333af00f08a6e13b}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{shadow\+Controller@{shadow\+Controller}!adhoc\+Settings@{adhoc\+Settings}}
+\index{adhoc\+Settings@{adhoc\+Settings}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{adhoc\+Settings(std\+::string \&payload)}{adhocSettings(std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::adhoc\+Settings (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a42b847749d4f2cd926c23706527e6279}{}\label{classshadowController_a42b847749d4f2cd926c23706527e6279}
+This function understands the payload received. Flushes, changes, timer settings etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em payload} & this is the settings contained in the payload. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!call\+The\+Interface@{call\+The\+Interface}}
+\index{call\+The\+Interface@{call\+The\+Interface}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{call\+The\+Interface(\+Interface\+Name i\+Name, std\+::string \&dev\+Id, std\+::string \&payload)}{callTheInterface(InterfaceName iName, std::string &devId, std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::call\+The\+Interface (
+\begin{DoxyParamCaption}
+\item[{Interface\+Name}]{i\+Name, }
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a05080635d38b83e6577e89acf3ab3954}{}\label{classshadowController_a05080635d38b83e6577e89acf3ab3954}
+This function calls the interface transport function with payload and everything.
+
+Thread safe function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Name} & this calls the interface of the device. \\
+\hline
+{\em dev\+Id} & Device ID of the device. \\
+\hline
+{\em data} & Payload of telemetry/notification. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!create\+Shadow@{create\+Shadow}}
+\index{create\+Shadow@{create\+Shadow}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{create\+Shadow(std\+::string \&dev\+Id, std\+::string \&raml)}{createShadow(std::string &devId, std::string &raml)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::create\+Shadow (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{raml}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_ab5c10b60f81e8733b235d14f6f5cce94}{}\label{classshadowController_ab5c10b60f81e8733b235d14f6f5cce94}
+Creates shadows
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & Device\+ID of the device. \\
+\hline
+{\em raml} & R\+A\+ML of the shadow. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!device\+Data@{device\+Data}}
+\index{device\+Data@{device\+Data}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{device\+Data(std\+::string \&dev\+Id, std\+::string \&data)}{deviceData(std::string &devId, std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::device\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_aafca8ac3d715c752d529e98340e3cd79}{}\label{classshadowController_aafca8ac3d715c752d529e98340e3cd79}
+Telemetry Data function
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & Device ID of the device. \\
+\hline
+{\em data} & Payload of telemetry/notification. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!generate\+Shadows\+From\+Persistent@{generate\+Shadows\+From\+Persistent}}
+\index{generate\+Shadows\+From\+Persistent@{generate\+Shadows\+From\+Persistent}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{generate\+Shadows\+From\+Persistent()}{generateShadowsFromPersistent()}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::generate\+Shadows\+From\+Persistent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a76614a8a202e8a76a33031ef947a4381}{}\label{classshadowController_a76614a8a202e8a76a33031ef947a4381}
+A function which reads from the persistent storage the shadows and take in the last state of data.
+
+Currently, inactive since complete app\textquotesingle{}s persistent storage lies down. However, placeholder is present. \index{shadow\+Controller@{shadow\+Controller}!get\+Device\+State@{get\+Device\+State}}
+\index{get\+Device\+State@{get\+Device\+State}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{get\+Device\+State(std\+::string \&dev\+Id, std\+::string \&data)}{getDeviceState(std::string &devId, std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::get\+Device\+State (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_af9b3a7480ce2b9ed1fef2c1985003462}{}\label{classshadowController_af9b3a7480ce2b9ed1fef2c1985003462}
+Get device state
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & Device ID of the device. \\
+\hline
+{\em data} & Payload of Job request \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!is\+Shadow\+Created@{is\+Shadow\+Created}}
+\index{is\+Shadow\+Created@{is\+Shadow\+Created}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{is\+Shadow\+Created(std\+::string \&dev\+Id)}{isShadowCreated(std::string &devId)}}]{\setlength{\rightskip}{0pt plus 5cm}bool shadow\+Controller\+::is\+Shadow\+Created (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a385f84ce9b1db4c264de6389d40d8174}{}\label{classshadowController_a385f84ce9b1db4c264de6389d40d8174}
+Checks whether shadow is already created or not. Depends upon the presence of R\+A\+ML.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & Device ID to check the whether that exists or not. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!Send\+Telemetry\+Data\+C\+C\+A\+PP@{Send\+Telemetry\+Data\+C\+C\+A\+PP}}
+\index{Send\+Telemetry\+Data\+C\+C\+A\+PP@{Send\+Telemetry\+Data\+C\+C\+A\+PP}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{Send\+Telemetry\+Data\+C\+C\+A\+P\+P(std\+::string \&dev\+Id, std\+::string \&payload)}{SendTelemetryDataCCAPP(std::string &devId, std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::\+Send\+Telemetry\+Data\+C\+C\+A\+PP (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_ab062f91f1a6a7bef68b8ccd4dc5be330}{}\label{classshadowController_ab062f91f1a6a7bef68b8ccd4dc5be330}
+This function is for sending the direct reply to the end app and for notification as well.
+
+Thread safe function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & Device ID of the device. \\
+\hline
+{\em data} & Payload of telemetry. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!send\+To\+Cloud@{send\+To\+Cloud}}
+\index{send\+To\+Cloud@{send\+To\+Cloud}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{send\+To\+Cloud(std\+::string \&topic, std\+::string \&payload)}{sendToCloud(std::string &topic, std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}void shadow\+Controller\+::send\+To\+Cloud (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{topic, }
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_a92a0b607d7683ffde25b40f126c59d1b}{}\label{classshadowController_a92a0b607d7683ffde25b40f126c59d1b}
+This function understands the payload received and sends it back to cloud.
+
+Thread safe function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em topic} & cloud topic which is the destination. \\
+\hline
+{\em payload} & payload is the string payload. \\
+\hline
+\end{DoxyParams}
+\index{shadow\+Controller@{shadow\+Controller}!set\+Device\+State@{set\+Device\+State}}
+\index{set\+Device\+State@{set\+Device\+State}!shadow\+Controller@{shadow\+Controller}}
+\subsubsection[{\texorpdfstring{set\+Device\+State(std\+::string \&dev\+Id, std\+::string \&data)}{setDeviceState(std::string &devId, std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}bool shadow\+Controller\+::set\+Device\+State (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{dev\+Id, }
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classshadowController_af09ea8c8a031af4508927f4eab6c820e}{}\label{classshadowController_af09ea8c8a031af4508927f4eab6c820e}
+Set device state
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+Id} & Device ID of the device. \\
+\hline
+{\em data} & Payload of Job request \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shadowcontroller.\+h\item 
+shadowcontroller.\+cc\end{DoxyCompactItemize}

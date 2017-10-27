@@ -1,0 +1,53 @@
+1) Request from cloud.
+
+Irrespective of the request packet, I will create the following blob structure:
+{
+  "JOBID": "591ebeb01d41c84a1112310d",
+  "status" : "DELTA_N_COMMAND_FIRED_SUCCESSFULLY",
+  "requested_by": {
+    "originator": "cloud_shadow",
+    "username": "einfochips"
+  },
+  "managed_by": {
+    "current_stage": "gateway_shadow"
+  },
+  "created_ts": "2017-07-01T07:51:47.211Z",
+  "request_data": { request payload received },
+  "response_data": { response payload send},  //This is my response structure.
+    "gwid" : "591e84907123a60e704dd4d1",
+    "deviceid"  : "5957b1b21d41c8075ec88765",
+    "orgid" : "58c3ce458441383a938c5c75"
+}
+
+I will send this over the reply topic and blob topic.
+ 
+
+Since, my shadow's desired value would also be changing, I would be sending the following packet over telemetry
+{
+  "snapshot": {
+    "on_off": {
+      "reported_value": "on",
+      "desired_value": [],
+      "subproperties": [
+        {
+          "abc": {
+            "reported_value": "on",
+            "desired_value": []
+          }
+        }
+      ]
+    },
+    "onlyget": {
+      "reported_value": "on"
+    },
+    "interval": {
+      "reported_value": "20",
+      "desired_value": []
+    }
+  }
+}
+
+This is the updated snapshot.
+++++++================================== Above is the cloud request.
+
+The kind of request I received, I would be sending that back to the app with the response in it.

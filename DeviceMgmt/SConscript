@@ -1,0 +1,117 @@
+Import('onb_env','pobj','ajobj','nsobj')
+import platform
+
+local_env = onb_env.Clone()
+
+vars = Variables()
+vars.Update(local_env)
+Help(vars.GenerateHelpText(local_env))
+
+if platform.system() == 'Linux':
+	if platform.machine() == 'x86_64':
+		 default_target_cpu = 'x86_64'
+	else:
+		default_target_cpu = 'arm'
+
+allowed_target_cpus = ('x86', 'x86_64', 'arm', 'openwrt')
+vars.Add(EnumVariable('CPU', 'Target CPU', default_target_cpu, allowed_values = allowed_target_cpus))
+target_cpu = ARGUMENTS.get('CPU', default_target_cpu)
+
+if target_cpu == 'arm':
+	print "###################################################"
+	print "#	       ARCHITECTURE - ARM                 #"
+	print "###################################################"
+	if local_env['OS'] == 'openwrt':
+	   local_env.Append(CPPDEFINES = '_OPEN_WRT_')
+
+	local_env.Append(CPPPATH = [ local_env.Dir('.'),
+		                     local_env.Dir('headers/'),
+				     local_env.Dir('AJAttachment/'),
+				     local_env.Dir('../../../Build-Tools/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/arm-linux-gnueabihf/include')])
+
+#	local_env.Append(LIBPATH = [local_env.Dir('../../../Build-Tools/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/arm-linux-gnueabihf/lib/boost/lib')])
+
+#	local_env.Append(LIBS = [  #'alljoyn_onboarding',
+#				   'alljoyn_app',
+#		                   'alljoyn_config',
+#		                   #'alljoyn_services_common'
+#		                   #'alljoyn_about',
+#				   'alljoyn',
+#				   'ajrouter'])
+
+	local_env.Append(LIBS = ['rt', 'stdc++', 'pthread', 'ajrouter', 'alljoyn', 'm', 'dl'])
+	local_env.Append(LIBS = [  'alljoyn_onboarding',
+				   'alljoyn_ajDev',
+		                   'alljoyn_config',
+	    			   'alljoyn_LampState',
+		                   'alljoyn_services_common',
+		                   'alljoyn_about',
+				   'alljoyn_common', 
+				   'alljoyn',
+				   'ajrouter'])
+	# BUILD ALLJOYN APP #
+	srcs_dev = local_env.Glob('*.cc')
+	srcs_dev1 = local_env.Glob('*.cpp')
+	srcs_aj = local_env.Glob('AJAttachment/*.cc')
+	objs = local_env.Object(srcs_dev)
+	objs.extend(srcs_dev1)
+	objs.extend(srcs_aj)
+	progs = local_env.Program('DeviceOnboardingApp', objs)
+	Return('progs')
+else:
+	print "###################################################"
+	print "#	    ARCHITECTURE - X86_64/X86		  #"
+	print "###################################################"
+	local_env.Append(LIBS = [  'alljoyn_onboarding',
+				   'alljoyn_ajDev',
+		                   'alljoyn_config',
+				   'alljoyn_LampState',
+		                   'alljoyn_services_common',
+		                   'alljoyn_about',
+			           'alljoyn_common',
+				   'alljoyn',
+				   'ajrouter'])
+	#local_env = SConscript(['../../../../../../../../build_core/SConscript'])
+	local_env.Append(CPPPATH = [ '.',
+		               'headers/',
+			       '#../App/Common',
+			       #'../../../../../../../../build/linux/x86_64/release/dist/cpp/inc/'
+  			     ])
+
+	local_env.Append(LIBS = ['rt', 'stdc++', 'pthread', 'ajrouter', 'alljoyn', 'm', 'dl', 'python2.7'])	#'boost_system', 'boost_thread'
+	local_env.Append(CXXFLAGS = [	'-fexceptions', 		# TODO : NEED TO REMOVE 
+				'-Wno-unused-variable',		# TODO : NEED TO REMOVE 
+				'-Wno-unused-but-set-variable',	# TODO : NEED TO REMOVE 
+				'-Wno-parentheses',		# TODO : NEED TO REMOVE 
+				'-fpermissive',			# TODO : NEED TO REMOVE 
+				'-Wno-switch',			# TODO : NEED TO REMOVE 
+				'-Wno-reorder',			# TODO : NEED TO REMOVE 
+				'-Wno-sign-compare',		# TODO : NEED TO REMOVE 
+				'-Wno-return-type',		# TODO : NEED TO REMOVE 
+				'-Wno-unused-parameter',	# TODO : NEED TO REMOVE
+				'-Wno-return-local-addr',	# TODO : NEED TO REMOVE
+				'-Wno-comment'])		# TODO : NEED TO REMOVE 
+	
+	# Build Common Fileobject file
+	#local_env['COMMON_DIR'] = '#../App/Common'
+	#pobj = local_env.SConscript('$COMMON_DIR/proxy/SConscript', variant_dir='$OBJDIR_APP', exports = ['local_env'])
+	#ajobj = local_env.SConscript('$COMMON_DIR/ajcommon/SConscript', variant_dir = '$OBJDIR_APP', exports = ['local_env'])
+	
+	srcs_cc  = local_env.Glob('*.cc')
+	srcs_cpp = local_env.Glob('*.cpp')
+	srcs_do  = local_env.Glob('DeviceObject/*.cc')
+	srcs_sc  = local_env.Glob('ShadowController/src/*.cc')
+#	srcs_sc_Gtest  = local_env.Glob('ShadowController/Gtest/googleFiles/googletest/src/*.cc')
+	#srcs_sc_testCases  = local_env.Glob('ShadowController/Gtest/ShadowControllerTestCases/*.cc')
+	objs = local_env.Object(srcs_cc)
+	objs.extend(srcs_cpp)
+	objs.extend(srcs_do)
+	objs.extend(srcs_sc)
+#	objs.extend(srcs_sc_Gtest)
+	#objs.extend(srcs_sc_testCases)
+
+	progs = local_env.Program('DeviceOnboardingApp', objs + pobj + ajobj + nsobj)
+
+	#progs = local_env.Program('testCasesSC', objs + pobj + ajobj + nsobj)
+	Return('progs')
+

@@ -1,0 +1,53 @@
+\hypertarget{classprepareResponse}{}\section{prepare\+Response Class Reference}
+\label{classprepareResponse}\index{prepare\+Response@{prepare\+Response}}
+
+
+A class which constructs the blob packets.  
+
+
+
+
+{\ttfamily \#include $<$shadow.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classprepareResponse_a06b9db57d391c2a2e5862319272a4778}{prepare\+Response\+Only\+Status} (json \&obj, const std\+::string \&status)
+\item 
+static void \hyperlink{classprepareResponse_a2a7ac61625ee38cf510d74de046c0cb8}{form\+The\+Blob\+Packet} (const std\+::string \&name\+Of\+Originator, const std\+::string \&dev\+I\+D\+Perm, const json \&the\+Command, const json \&the\+Response, const std\+::string \&status, json \&the\+Command\+Payload)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class which constructs the blob packets. 
+
+\subsection{Member Function Documentation}
+\index{prepare\+Response@{prepare\+Response}!form\+The\+Blob\+Packet@{form\+The\+Blob\+Packet}}
+\index{form\+The\+Blob\+Packet@{form\+The\+Blob\+Packet}!prepare\+Response@{prepare\+Response}}
+\subsubsection[{\texorpdfstring{form\+The\+Blob\+Packet(const std\+::string \&name\+Of\+Originator, const std\+::string \&dev\+I\+D\+Perm, const json \&the\+Command, const json \&the\+Response, const std\+::string \&status, json \&the\+Command\+Payload)}{formTheBlobPacket(const std::string &nameOfOriginator, const std::string &devIDPerm, const json &theCommand, const json &theResponse, const std::string &status, json &theCommandPayload)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prepare\+Response\+::form\+The\+Blob\+Packet (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name\+Of\+Originator, }
+\item[{const std\+::string \&}]{dev\+I\+D\+Perm, }
+\item[{const json \&}]{the\+Command, }
+\item[{const json \&}]{the\+Response, }
+\item[{const std\+::string \&}]{status, }
+\item[{json \&}]{the\+Command\+Payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classprepareResponse_a2a7ac61625ee38cf510d74de046c0cb8}{}\label{classprepareResponse_a2a7ac61625ee38cf510d74de046c0cb8}
+Blob packet static formation.
+
+/param name\+Of\+Originator Name of the originator. /param dev\+I\+D\+Perm Permanent device ID of the shadow. /param the\+Command Job request payload. /param the\+Response Job Response payload. /param status Job Status of the job. /param the\+Command\+Payload Destination payload in which the blob is to be created. \index{prepare\+Response@{prepare\+Response}!prepare\+Response\+Only\+Status@{prepare\+Response\+Only\+Status}}
+\index{prepare\+Response\+Only\+Status@{prepare\+Response\+Only\+Status}!prepare\+Response@{prepare\+Response}}
+\subsubsection[{\texorpdfstring{prepare\+Response\+Only\+Status(json \&obj, const std\+::string \&status)}{prepareResponseOnlyStatus(json &obj, const std::string &status)}}]{\setlength{\rightskip}{0pt plus 5cm}static void prepare\+Response\+::prepare\+Response\+Only\+Status (
+\begin{DoxyParamCaption}
+\item[{json \&}]{obj, }
+\item[{const std\+::string \&}]{status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classprepareResponse_a06b9db57d391c2a2e5862319272a4778}{}\label{classprepareResponse_a06b9db57d391c2a2e5862319272a4778}
+Prepare the status response only.
+
+/param obj of the json /param status this is the status of the job. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+shadow.\+h\end{DoxyCompactItemize}

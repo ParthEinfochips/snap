@@ -1,0 +1,30 @@
+These will be my responses based on the originator and packets I will be sending.
+
+
+++++++=======================
+
+Finally on telemetry, I am sending the snapshot to telemetry topic.
+{
+  "snapshot": {
+    "on_off": {
+      "reported_value": "on",
+      "desired_value": [],
+      "subproperties": [
+        {
+          "abc": {
+            "reported_value": "on",
+            "desired_value": []
+          }
+        }
+      ]
+    },
+    "onlyget": {
+      "reported_value": "on"
+    },
+    "interval": {
+      "reported_value": "20",
+      "desired_value": []
+    }
+  }
+}
+

@@ -1,0 +1,94 @@
+\hypertarget{classramlParserPyCPP}{}\section{raml\+Parser\+Py\+C\+PP Class Reference}
+\label{classramlParserPyCPP}\index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+
+
+\hyperlink{classramlParserPyCPP}{raml\+Parser\+Py\+C\+PP} this is the class which is derived from the pybindingcpp class. This class passes the raml text to the R\+A\+M\+L\+F\+I\+C\+A\+T\+I\+O\+NS library which returns a json.  
+
+
+
+
+{\ttfamily \#include $<$ramlparserpycpp.\+h$>$}
+
+
+
+Inheritance diagram for raml\+Parser\+Py\+C\+PP\+:
+% FIG 0
+
+
+Collaboration diagram for raml\+Parser\+Py\+C\+PP\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classramlParserPyCPP_a3debcf503c5464028a0f52ad439050d7}{raml\+Parser\+Py\+C\+PP} ()
+\item 
+\hyperlink{classramlParserPyCPP_adea2989c31c5b5b876176ae256e6d38f}{$\sim$raml\+Parser\+Py\+C\+PP} ()
+\item 
+void \hyperlink{classramlParserPyCPP_a88148a5ac7cde2c4750cd2b7bedf76e3}{get\+Json\+Of\+R\+A\+ML} (\hyperlink{structvaluesReqRAML}{values\+Req\+R\+A\+ML} $\ast$values\+Req\+R\+A\+M\+L\+Obj\+Temp)
+\item 
+virtual Py\+Object $\ast$ \hyperlink{classramlParserPyCPP_a7ab09f4772eea48dadc6b8e2240289d9}{call\+Function} ()
+\item 
+virtual bool \hyperlink{classramlParserPyCPP_a3950e96ca7bba7f8dd9bac4fe02b698c}{usage\+Specific\+Function} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classramlParserPyCPP}{raml\+Parser\+Py\+C\+PP} this is the class which is derived from the pybindingcpp class. This class passes the raml text to the R\+A\+M\+L\+F\+I\+C\+A\+T\+I\+O\+NS library which returns a json. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}!raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+\index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}!raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+\subsubsection[{\texorpdfstring{raml\+Parser\+Py\+C\+P\+P()}{ramlParserPyCPP()}}]{\setlength{\rightskip}{0pt plus 5cm}raml\+Parser\+Py\+C\+P\+P\+::raml\+Parser\+Py\+C\+PP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classramlParserPyCPP_a3debcf503c5464028a0f52ad439050d7}{}\label{classramlParserPyCPP_a3debcf503c5464028a0f52ad439050d7}
+Constructor. \index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}!````~raml\+Parser\+Py\+C\+PP@{$\sim$raml\+Parser\+Py\+C\+PP}}
+\index{````~raml\+Parser\+Py\+C\+PP@{$\sim$raml\+Parser\+Py\+C\+PP}!raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+\subsubsection[{\texorpdfstring{$\sim$raml\+Parser\+Py\+C\+P\+P()}{~ramlParserPyCPP()}}]{\setlength{\rightskip}{0pt plus 5cm}raml\+Parser\+Py\+C\+P\+P\+::$\sim$raml\+Parser\+Py\+C\+PP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classramlParserPyCPP_adea2989c31c5b5b876176ae256e6d38f}{}\label{classramlParserPyCPP_adea2989c31c5b5b876176ae256e6d38f}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}!call\+Function@{call\+Function}}
+\index{call\+Function@{call\+Function}!raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+\subsubsection[{\texorpdfstring{call\+Function()}{callFunction()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Py\+Object$\ast$ raml\+Parser\+Py\+C\+P\+P\+::call\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classramlParserPyCPP_a7ab09f4772eea48dadc6b8e2240289d9}{}\label{classramlParserPyCPP_a7ab09f4772eea48dadc6b8e2240289d9}
+This function calls loads the module and calls the ramlfications function.
+
+It returns the pyobject containing the json format. 
+
+Implements \hyperlink{classPyBindingCPP_aef879a6f875292752d189e10bfd6b332}{Py\+Binding\+C\+PP}.
+
+\index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}!get\+Json\+Of\+R\+A\+ML@{get\+Json\+Of\+R\+A\+ML}}
+\index{get\+Json\+Of\+R\+A\+ML@{get\+Json\+Of\+R\+A\+ML}!raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+\subsubsection[{\texorpdfstring{get\+Json\+Of\+R\+A\+M\+L(values\+Req\+R\+A\+M\+L $\ast$values\+Req\+R\+A\+M\+L\+Obj\+Temp)}{getJsonOfRAML(valuesReqRAML *valuesReqRAMLObjTemp)}}]{\setlength{\rightskip}{0pt plus 5cm}void raml\+Parser\+Py\+C\+P\+P\+::get\+Json\+Of\+R\+A\+ML (
+\begin{DoxyParamCaption}
+\item[{{\bf values\+Req\+R\+A\+ML} $\ast$}]{values\+Req\+R\+A\+M\+L\+Obj\+Temp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classramlParserPyCPP_a88148a5ac7cde2c4750cd2b7bedf76e3}{}\label{classramlParserPyCPP_a88148a5ac7cde2c4750cd2b7bedf76e3}
+Get json OF raml file. \index{raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}!usage\+Specific\+Function@{usage\+Specific\+Function}}
+\index{usage\+Specific\+Function@{usage\+Specific\+Function}!raml\+Parser\+Py\+C\+PP@{raml\+Parser\+Py\+C\+PP}}
+\subsubsection[{\texorpdfstring{usage\+Specific\+Function()}{usageSpecificFunction()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool raml\+Parser\+Py\+C\+P\+P\+::usage\+Specific\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classramlParserPyCPP_a3950e96ca7bba7f8dd9bac4fe02b698c}{}\label{classramlParserPyCPP_a3950e96ca7bba7f8dd9bac4fe02b698c}
+This function imports the ramlfications parser module. This function calls the call\+Function for the actual json object creation.
+
+returns the boolean value. 
+
+Implements \hyperlink{classPyBindingCPP_a4f722f63ce03ffb0e3972e68b0872200}{Py\+Binding\+C\+PP}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ramlparserpycpp.\+h\end{DoxyCompactItemize}

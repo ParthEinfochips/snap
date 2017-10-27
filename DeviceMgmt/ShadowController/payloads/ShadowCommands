@@ -1,0 +1,14 @@
+
+Register === 
+
+ 
+Request :-  {"CLIENTID": "598070b07123a60532af7944", "raml": "COntent of raml",  "devices": [{"displayname": "FGD212 Dimmer 2", "address": "", "macid": "010f0102100018", "appid": "zwaveApp_1", "protocol": "ZWAVE", "id": "5982fd4f7123a64144f78c92"}], "JOBID": "5982fd601d41c82d23bbe597"}
+
+Set Device State ====
+
+Request :- {"protocol": "ZWAVE", "gwid": "598070b07123a60532af7944", "CLIENTID": "598070b07123a60532af7944", "JOBID": "598300351d41c82d23bbe59e", "orgid": "58c3ce458441383a938c5c75", "deviceId": "5982fd4f7123a64144f78c92", "appid": "zwaveApp_1", "rid": "598300351d41c82d23bbe59e", "properties": [{"Level": 90}]}
+
+Get Device State ====
+
+Request :-  {"protocol": "ZWAVE", "gwid": "598070b07123a60532af7944", "CLIENTID": "598070b07123a60532af7944", "JOBID": "598300901d41c82d24bbe5a9", "orgid": "58c3ce458441383a938c5c75", "deviceId": "5982fd4f7123a64144f78c92", "appid": "zwaveApp_1", "rid": "598300901d41c82d24bbe5a9", "properties": [{"property": "Level"}]}
+
