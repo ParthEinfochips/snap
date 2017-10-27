@@ -1,0 +1,127 @@
+\hypertarget{classMqttApi}{}\section{Mqtt\+Api Class Reference}
+\label{classMqttApi}\index{Mqtt\+Api@{Mqtt\+Api}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Mqtt\+Api} (\hyperlink{classmqttBusObject}{mqtt\+Bus\+Object} $\ast$mqtt\+Ptr)\hypertarget{classMqttApi_aeae821eb791a3dea6943062e064c63f2}{}\label{classMqttApi_aeae821eb791a3dea6943062e064c63f2}
+
+\item 
+std\+::string {\bfseries get\+Connection\+List} ()\hypertarget{classMqttApi_a989e9c188cd692d44a1905d97739fdf4}{}\label{classMqttApi_a989e9c188cd692d44a1905d97739fdf4}
+
+\item 
+Q\+Status {\bfseries update\+Connection\+Json} ()\hypertarget{classMqttApi_aab3524afe9b862f201726a88acb84039}{}\label{classMqttApi_aab3524afe9b862f201726a88acb84039}
+
+\item 
+Q\+Status \hyperlink{classMqttApi_a8da0bfabb8ee565df397fc3678c92cfd}{register\+Endpoint} (std\+::string \&id, std\+::string unique\+Name, std\+::string payload)
+\item 
+bool \hyperlink{classMqttApi_aae0eed0c126822a193618ef2916f9645}{deregister\+Endpoint} (std\+::string \&payload, std\+::string unique\+Name)
+\item 
+uint16\+\_\+t \hyperlink{classMqttApi_a1dc79b81c5afabdda68f6ff7c7ecc024}{connect} (std\+::string \&payload, std\+::string unique\+Name)
+\item 
+Q\+Status \hyperlink{classMqttApi_aaa816989dc54ff5b693653c34f2331fc}{publish} (uint16\+\_\+t ID, std\+::string \&payload)
+\item 
+Q\+Status \hyperlink{classMqttApi_adf2e9e122717619a39dbd8dbb51ffc19}{subscribe} (uint16\+\_\+t ID, std\+::string \&payload)
+\item 
+Q\+Status \hyperlink{classMqttApi_a282d228cb874ef2fa225e7337162c634}{unsubscribe} (uint16\+\_\+t ID, std\+::string \&payload)
+\item 
+Q\+Status \hyperlink{classMqttApi_a709193a5f0caf088a9c3d6cdae24effe}{disconnect} (uint16\+\_\+t ID, std\+::string \&payload, std\+::string unique\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Mqtt\+Api@{Mqtt\+Api}!connect@{connect}}
+\index{connect@{connect}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{connect(std\+::string \&payload, std\+::string unique\+Name)}{connect(std::string &payload, std::string uniqueName)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Mqtt\+Api\+::connect (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{payload, }
+\item[{std\+::string}]{unique\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_a1dc79b81c5afabdda68f6ff7c7ecc024}{}\label{classMqttApi_a1dc79b81c5afabdda68f6ff7c7ecc024}
+Fetch only host \& port for connection
+
+Verify the connection is not present already
+
+Check if the required endpoint is already created, if so return the same
+
+Send the success response.
+
+Connection is complete. Add connection\+String, connection\+Endpoint, app\+Name in active\+Connection\+List.
+
+Send the success response. \index{Mqtt\+Api@{Mqtt\+Api}!deregister\+Endpoint@{deregister\+Endpoint}}
+\index{deregister\+Endpoint@{deregister\+Endpoint}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{deregister\+Endpoint(std\+::string \&payload, std\+::string unique\+Name)}{deregisterEndpoint(std::string &payload, std::string uniqueName)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Mqtt\+Api\+::deregister\+Endpoint (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{payload, }
+\item[{std\+::string}]{unique\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_aae0eed0c126822a193618ef2916f9645}{}\label{classMqttApi_aae0eed0c126822a193618ef2916f9645}
+Check if the node exists with such an endpoint
+
+Update the app\+List of \hyperlink{structconnectionMap}{connection\+Map}
+
+Remove this node if app\+List is empty now.
+
+No such node exists with the provided endpoint, send negative response \index{Mqtt\+Api@{Mqtt\+Api}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{disconnect(uint16\+\_\+t I\+D, std\+::string \&payload, std\+::string unique\+Name)}{disconnect(uint16_t ID, std::string &payload, std::string uniqueName)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status Mqtt\+Api\+::disconnect (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{ID, }
+\item[{std\+::string \&}]{payload, }
+\item[{std\+::string}]{unique\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_a709193a5f0caf088a9c3d6cdae24effe}{}\label{classMqttApi_a709193a5f0caf088a9c3d6cdae24effe}
+Remove app\+Name from app\+List of that specific node.
+
+Remove this node if app\+List is empty now.
+
+Perform actual disconnection of M\+Q\+TT Cloud Endpoint Fetch the pointer and disconnect
+
+Remove node from active connection list
+
+Send the success response. \index{Mqtt\+Api@{Mqtt\+Api}!publish@{publish}}
+\index{publish@{publish}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{publish(uint16\+\_\+t I\+D, std\+::string \&payload)}{publish(uint16_t ID, std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status Mqtt\+Api\+::publish (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{ID, }
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_aaa816989dc54ff5b693653c34f2331fc}{}\label{classMqttApi_aaa816989dc54ff5b693653c34f2331fc}
+Fetch the pointer and forward the packet
+
+Send the success response. \index{Mqtt\+Api@{Mqtt\+Api}!register\+Endpoint@{register\+Endpoint}}
+\index{register\+Endpoint@{register\+Endpoint}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{register\+Endpoint(std\+::string \&id, std\+::string unique\+Name, std\+::string payload)}{registerEndpoint(std::string &id, std::string uniqueName, std::string payload)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status Mqtt\+Api\+::register\+Endpoint (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{id, }
+\item[{std\+::string}]{unique\+Name, }
+\item[{std\+::string}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_a8da0bfabb8ee565df397fc3678c92cfd}{}\label{classMqttApi_a8da0bfabb8ee565df397fc3678c92cfd}
+Check if the node exists with such an endpoint
+
+Update the app\+List of \hyperlink{structconnectionMap}{connection\+Map}
+
+No such node exists with the provided endpoint, send negative response \index{Mqtt\+Api@{Mqtt\+Api}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{subscribe(uint16\+\_\+t I\+D, std\+::string \&payload)}{subscribe(uint16_t ID, std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status Mqtt\+Api\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{ID, }
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_adf2e9e122717619a39dbd8dbb51ffc19}{}\label{classMqttApi_adf2e9e122717619a39dbd8dbb51ffc19}
+Fetch the pointer and forward the packet
+
+Send the success response. \index{Mqtt\+Api@{Mqtt\+Api}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!Mqtt\+Api@{Mqtt\+Api}}
+\subsubsection[{\texorpdfstring{unsubscribe(uint16\+\_\+t I\+D, std\+::string \&payload)}{unsubscribe(uint16_t ID, std::string &payload)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status Mqtt\+Api\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{ID, }
+\item[{std\+::string \&}]{payload}
+\end{DoxyParamCaption}
+)}\hypertarget{classMqttApi_a282d228cb874ef2fa225e7337162c634}{}\label{classMqttApi_a282d228cb874ef2fa225e7337162c634}
+Fetch the pointer and forward the packet 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Mqtt\+Api.\+h\item 
+Mqtt\+Api.\+cc\end{DoxyCompactItemize}

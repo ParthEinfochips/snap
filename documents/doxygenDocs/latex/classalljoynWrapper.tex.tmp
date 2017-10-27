@@ -1,0 +1,55 @@
+\hypertarget{classalljoynWrapper}{}\section{alljoyn\+Wrapper Class Reference}
+\label{classalljoynWrapper}\index{alljoyn\+Wrapper@{alljoyn\+Wrapper}}
+
+
+Inheritance diagram for alljoyn\+Wrapper\+:
+% FIG 0
+
+
+Collaboration diagram for alljoyn\+Wrapper\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries alljoyn\+Wrapper} (\hyperlink{structargDetails}{arg\+Details} $\ast$arg\+Det)\hypertarget{classalljoynWrapper_a4a75982688b947cb7542fbdb06caa8a6}{}\label{classalljoynWrapper_a4a75982688b947cb7542fbdb06caa8a6}
+
+\item 
+Q\+Status {\bfseries init} ()\hypertarget{classalljoynWrapper_a6de589c5c6305422ec9d27033243830d}{}\label{classalljoynWrapper_a6de589c5c6305422ec9d27033243830d}
+
+\item 
+void {\bfseries Dinit} ()\hypertarget{classalljoynWrapper_a1e94b2050fa2f4c7fe9e6d073608db4c}{}\label{classalljoynWrapper_a1e94b2050fa2f4c7fe9e6d073608db4c}
+
+\item 
+Q\+Status {\bfseries Connect\+Mqtt} ()\hypertarget{classalljoynWrapper_aaed2a050da024385efa64024d70e0b11}{}\label{classalljoynWrapper_aaed2a050da024385efa64024d70e0b11}
+
+\item 
+ajn\+::\+Bus\+Attachment $\ast$ {\bfseries get\+Bus} ()\hypertarget{classalljoynWrapper_a640cc79f507dbab1ab125455edd2db4f}{}\label{classalljoynWrapper_a640cc79f507dbab1ab125455edd2db4f}
+
+\item 
+void {\bfseries loss\+Advertise} (qcc\+::\+String bus\+Name)\hypertarget{classalljoynWrapper_a35f6da670a5e2d0f7f22e53a81896190}{}\label{classalljoynWrapper_a35f6da670a5e2d0f7f22e53a81896190}
+
+\item 
+void {\bfseries find\+Advertise} (qcc\+::\+String bus\+Name)\hypertarget{classalljoynWrapper_a476dfb1b0b5a64fb5fbf6f0f4b410c19}{}\label{classalljoynWrapper_a476dfb1b0b5a64fb5fbf6f0f4b410c19}
+
+\item 
+void {\bfseries get\+Topic\+Call\+Back} (std\+::string argu1, std\+::string argu2)\hypertarget{classalljoynWrapper_a2a0eace912f8ae3f61ab8accabdb4aae}{}\label{classalljoynWrapper_a2a0eace912f8ae3f61ab8accabdb4aae}
+
+\item 
+void {\bfseries Method\+Caller\+Async\+Callback} (std\+::string, std\+::string)\hypertarget{classalljoynWrapper_a375dd6bb544d03ea9cb6fa94f20a7df8}{}\label{classalljoynWrapper_a375dd6bb544d03ea9cb6fa94f20a7df8}
+
+\item 
+void {\bfseries Cancle\+Name\+Service} ()\hypertarget{classalljoynWrapper_ae7c071e7b1ba46f16f8cb6f3d2e2531c}{}\label{classalljoynWrapper_ae7c071e7b1ba46f16f8cb6f3d2e2531c}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ A\+J\+Common $>$ {\bfseries aj\+Com\+Ptr} = nullptr\hypertarget{classalljoynWrapper_ae99b3201ca43e83a81cbd04934072258}{}\label{classalljoynWrapper_ae99b3201ca43e83a81cbd04934072258}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+alljoyn\+Wrapper.\+h\item 
+alljoyn\+Wrapper.\+cc\end{DoxyCompactItemize}

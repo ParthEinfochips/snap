@@ -1,0 +1,59 @@
+\hypertarget{classcloudWrapper}{}\section{cloud\+Wrapper Class Reference}
+\label{classcloudWrapper}\index{cloud\+Wrapper@{cloud\+Wrapper}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcloudWrapper_a4f69ede49f1eeacf28620683c1a8e88c}{init\+Cloud\+Wrapper} (Protocol\+Type protocol)
+\item 
+Q\+Status {\bfseries Connect} (std\+::string json\+String)\hypertarget{classcloudWrapper_af973f5cc72e6567c24ea8c7da509fe0b}{}\label{classcloudWrapper_af973f5cc72e6567c24ea8c7da509fe0b}
+
+\item 
+Q\+Status {\bfseries Send\+Data} (std\+::string json\+String)\hypertarget{classcloudWrapper_abc5a65a04f3ce240d0a2ae88ca8871ce}{}\label{classcloudWrapper_abc5a65a04f3ce240d0a2ae88ca8871ce}
+
+\item 
+Q\+Status {\bfseries Register\+Listener} (std\+::string json\+String)\hypertarget{classcloudWrapper_a25357b85f8bdb2f29b42b92a9c5f1c0e}{}\label{classcloudWrapper_a25357b85f8bdb2f29b42b92a9c5f1c0e}
+
+\item 
+Q\+Status {\bfseries Cancel\+Listener} (std\+::string json\+String)\hypertarget{classcloudWrapper_a5cf0defacb6e67a6a1383eb3198e4bfb}{}\label{classcloudWrapper_a5cf0defacb6e67a6a1383eb3198e4bfb}
+
+\item 
+Q\+Status {\bfseries Configure\+T\+LS} (std\+::string json\+String)\hypertarget{classcloudWrapper_a02473231b739888efceb9dcd1be8cf9b}{}\label{classcloudWrapper_a02473231b739888efceb9dcd1be8cf9b}
+
+\item 
+Q\+Status {\bfseries Disconnect} ()\hypertarget{classcloudWrapper_aa0d645e47206da9fbbd994363dea3aec}{}\label{classcloudWrapper_aa0d645e47206da9fbbd994363dea3aec}
+
+\item 
+void \hyperlink{classcloudWrapper_a52d04484e0ac23ce6d28a476fc38503c}{add\+Message\+Callback} (std\+::function$<$ void(std\+::string json\+Str)$>$ function\+Pointer)
+\item 
+void {\bfseries add\+Connection\+Callback} (std\+::function$<$ void(void)$>$ function\+Pointer)\hypertarget{classcloudWrapper_aee7b73f7b8daf11ef067b2f2a0e00eef}{}\label{classcloudWrapper_aee7b73f7b8daf11ef067b2f2a0e00eef}
+
+\item 
+void {\bfseries add\+Disconnection\+Callback} (std\+::function$<$ void(void)$>$ function\+Pointer)\hypertarget{classcloudWrapper_ad3f75e4bebebb5b6856ca0197915cc94}{}\label{classcloudWrapper_ad3f75e4bebebb5b6856ca0197915cc94}
+
+\item 
+void {\bfseries add\+Error\+Callback} (std\+::function$<$ void(void)$>$ function\+Pointer)\hypertarget{classcloudWrapper_ad8791b3e5e739ae867c059cc1a01048d}{}\label{classcloudWrapper_ad8791b3e5e739ae867c059cc1a01048d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{cloud\+Wrapper@{cloud\+Wrapper}!add\+Message\+Callback@{add\+Message\+Callback}}
+\index{add\+Message\+Callback@{add\+Message\+Callback}!cloud\+Wrapper@{cloud\+Wrapper}}
+\subsubsection[{\texorpdfstring{add\+Message\+Callback(std\+::function$<$ void(std\+::string json\+Str)$>$ function\+Pointer)}{addMessageCallback(std::function< void(std::string jsonStr)> functionPointer)}}]{\setlength{\rightskip}{0pt plus 5cm}void cloud\+Wrapper\+::add\+Message\+Callback (
+\begin{DoxyParamCaption}
+\item[{std\+::function$<$ void(std\+::string json\+Str)$>$}]{function\+Pointer}
+\end{DoxyParamCaption}
+)}\hypertarget{classcloudWrapper_a52d04484e0ac23ce6d28a476fc38503c}{}\label{classcloudWrapper_a52d04484e0ac23ce6d28a476fc38503c}
+Common Callbacks \index{cloud\+Wrapper@{cloud\+Wrapper}!init\+Cloud\+Wrapper@{init\+Cloud\+Wrapper}}
+\index{init\+Cloud\+Wrapper@{init\+Cloud\+Wrapper}!cloud\+Wrapper@{cloud\+Wrapper}}
+\subsubsection[{\texorpdfstring{init\+Cloud\+Wrapper(\+Protocol\+Type protocol)}{initCloudWrapper(ProtocolType protocol)}}]{\setlength{\rightskip}{0pt plus 5cm}void cloud\+Wrapper\+::init\+Cloud\+Wrapper (
+\begin{DoxyParamCaption}
+\item[{Protocol\+Type}]{protocol}
+\end{DoxyParamCaption}
+)}\hypertarget{classcloudWrapper_a4f69ede49f1eeacf28620683c1a8e88c}{}\label{classcloudWrapper_a4f69ede49f1eeacf28620683c1a8e88c}
+Open Provided Dynamic Library (C\+TL) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cloud\+Wrapper.\+h\item 
+cloud\+Wrapper.\+cc\end{DoxyCompactItemize}

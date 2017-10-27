@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [MQTTApp]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script language="javascript">
+      function getStyle(el,styleProp) {
+        if (el.currentStyle)
+          var y = el.currentStyle[styleProp];
+        else if (window.getComputedStyle)
+          var y = document.defaultView.getComputedStyle(el,null).getPropertyValue(styleProp);
+        return y;
+      }
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+        if (el.style.display == "block") {
+          el.style.display = "none";
+          mark.innerHTML = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.innerHTML = "[-]";
+        }
+      }
+      function init_expandables() {
+        var elts = document.getElementsByClassName("expandable");
+        for (var i = 0; i < elts.length; i++) {
+          var el = elts[i];
+          var clickable = el.getElementsByTagName("span")[0];
+          var marker = clickable.getElementsByClassName("marker")[0];
+          var content = el.getElementsByClassName("content")[0];
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.onclick = toggle;
+        }
+      }
+    </script>
+  </head>
+  <body onload="init_expandables()">
+      <div id="header">
+        <h1>Cppcheck report - [project name]:  </h1>
+      </div>
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Defect summary;</a> </p>
+       <p>
+        9 total<br/><br/>
+        8 unusedFunction<br/>
+        1 missingInclude<br/>
+<br/><br/><a href="stats.html">Statistics</a></p>
+      </div>
+      <div id="content_index">
+       <table>
+       <tr><th>Line</th><th>Id</th><th>Severity</th><th>Message</th></tr>
+       <tr><td colspan='4'><a href='2.html'></a></td></tr>
+         <tr><td></td><td>missingInclude</td><td>style</td><td>Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project's include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config.</td></tr>
+       <tr><td colspan='4'><a href='1.html'>alljoynWrapper.cc</a></td></tr>
+       <tr><td><a href='1.html#line-250'>250</a></td><td>unusedFunction</td><td>style</td><td >The function 'lossAdvertise' is never used.</td></tr>
+       <tr><td><a href='1.html#line-260'>260</a></td><td>unusedFunction</td><td>style</td><td >The function 'findAdvertise' is never used.</td></tr>
+       <tr><td colspan='4'><a href='0.html'>mqttBusObject.cc</a></td></tr>
+       <tr><td><a href='0.html#line-44'>44</a></td><td>unusedFunction</td><td>style</td><td >The function 'GetMRAMLHandler' is never used.</td></tr>
+       <tr><td><a href='0.html#line-54'>54</a></td><td>unusedFunction</td><td>style</td><td >The function 'AsyncListenerHandler' is never used.</td></tr>
+       <tr><td><a href='0.html#line-106'>106</a></td><td>unusedFunction</td><td>style</td><td >The function 'SyncListenerHandler' is never used.</td></tr>
+       <tr><td><a href='0.html#line-161'>161</a></td><td>unusedFunction</td><td>style</td><td >The function 'CallbackRegisterHandler' is never used.</td></tr>
+       <tr><td><a href='0.html#line-215'>215</a></td><td>unusedFunction</td><td>style</td><td >The function 'CallbackListenerHandler' is never used.</td></tr>
+       <tr><td><a href='0.html#line-1270'>1270</a></td><td>unusedFunction</td><td>style</td><td >The function 'MethodCallerAsyncCallback' is never used.</td></tr>
+       </table>
+      </div>
+      <div id="footer">
+        <p>
+         Cppcheck  - a tool for static C/C++ code analysis</br>
+         </br>
+         Internet: <a href="http://cppcheck.sourceforge.net">http://cppcheck.sourceforge.net</a></br>
+         IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a></br>
+        <p>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+
+/*********************************************************************************************************************
+ * Snapbricks Base Package Version 1.0
+ *
+ * Application Name :- MQTT Application
+ *
+ * Date:- 21-July-2017
+ *
+ *
+ *********************************************************************************************************************/
+
+
+ Description:-
+
+        MqttApp allows different applications to connect, subscribe , unsubscribe , publish and disconnect with respect to any broker.
+
+
+ Features:-
+
+        * Allows different application to connect to multiple brokers using MqttApp.
+        * Automatically connects/reconnects with the broker in the case when there is broker issue and informing connected apps.
+        * Allows different apps to subscribe different topic with respect to any broker.
+        * Fixed alljoyn interface consisting of five functions 1) syncListener 2) AsyncListener 3) CallbackRegister 4) 		             CallBackListener 5) GetRAML.
+        * Fixed functionalities 1)connect 2)registerendpoint 3)deregisterendpoint 4)sendtocloud 5)disconnect.
+		* Providing different Apps endpointID once connected with broker.
+
+        * Integration of the android local apps fuctionality and controlling using MqttApp.
+        * Support for android local app to add multiple broker and perform the functionalities.
+		* Support for SSL/TLS certificates.
+		* Config file for MqttApp to allow MqttApp to connect to multiple on startup itself.
+
+
+ Know Issues:-
+		
+		* NIL
+
+ Scope For Improvement:-
+		
+		* Dynamic configuration of topic with respect to AndroidApp.
+		* Once AMQPApp comes , managing the AMQPApp with the same functionalities and payload.
+		* Stress testing.
+
+	
+ Cloud App Connection Mechinism For Different Apps:
+
+		1) Connect
+
+    	   Command : "connect"
+
+   		   payload : {
+
+				"appname":"org.alljoyn.eI.DMA.GW58c3ce458441383a938c5c75.APPDeviceMgmt",
+            	"clientid":"ff",
+            	"hostname":"104.236.138.227",
+            	"username":"iotuser",
+            	"password":"ei12@",
+				"port":1883
+
+          }
+
+		 2) RegisterEndPoint
+
+    		Command : "registerendpoint"
+
+    		payload : {
+
+            	"topic":std::string,
+            	"endpointid":int,
+          
+			}
+
+
+		 3) Un-RegisterEndPoint
+
+            Command : "unregisterendpoint"
+
+            payload : {
+
+				"topic":std::string,
+				"endpointid":int,
+          	
+			}
+
+
+		  4) SendToCloud
+
+    	     Command : "sentocloud"
+
+    		 payload : {
+
+				"topic":std::string,
+				"endpointid":int,
+	            ...(Meta Data)
+          
+			}
+
+		  5) Disconnect
+
+    		 Command : "disconnect"
+
+    		 payload : {
+
+				"appName":"org.alljoyn.eI.DMA.GW58c3ce458441383a938c5c75.APPDeviceMgmt",
+				"endpointid":int,
+         
+			 }
+

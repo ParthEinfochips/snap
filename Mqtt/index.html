@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script language="javascript">
+      function getStyle(el,styleProp) {
+        if (el.currentStyle)
+          var y = el.currentStyle[styleProp];
+        else if (window.getComputedStyle)
+          var y = document.defaultView.getComputedStyle(el,null).getPropertyValue(styleProp);
+        return y;
+      }
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+        if (el.style.display == "block") {
+          el.style.display = "none";
+          mark.innerHTML = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.innerHTML = "[-]";
+        }
+      }
+      function init_expandables() {
+        var elts = document.getElementsByClassName("expandable");
+        for (var i = 0; i < elts.length; i++) {
+          var el = elts[i];
+          var clickable = el.getElementsByTagName("span")[0];
+          var marker = clickable.getElementsByClassName("marker")[0];
+          var content = el.getElementsByClassName("content")[0];
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.onclick = toggle;
+        }
+      }
+    </script>
+  </head>
+  <body onload="init_expandables()">
+      <div id="header">
+        <h1>Cppcheck report - [project name]:  </h1>
+      </div>
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Defect summary;</a> </p>
+       <p>
+        15 total<br/><br/>
+        6 unusedFunction<br/>
+        2 noCopyConstructor<br/>
+        2 noExplicitConstructor<br/>
+        2 uninitMemberVar<br/>
+        1 memleak<br/>
+        1 missingInclude<br/>
+        1 unusedStructMember<br/>
+<br/><br/><a href="stats.html">Statistics</a></p>
+      </div>
+      <div id="content_index">
+       <table>
+       <tr><th>Line</th><th>Id</th><th>Severity</th><th>Message</th></tr>
+       <tr><td colspan='4'><a href='8.html'></a></td></tr>
+         <tr><td></td><td>missingInclude</td><td>style</td><td>Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project's include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config.</td></tr>
+       <tr><td colspan='4'><a href='1.html'>MqttApi.h</a></td></tr>
+       <tr><td><a href='1.html#line-20'>20</a></td><td>noExplicitConstructor</td><td>style</td><td >Class 'MqttApi' has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.</td></tr>
+       <tr><td colspan='4'><a href='0.html'>alljoynWrapper.h</a></td></tr>
+       <tr><td><a href='0.html#line-58'>58</a></td><td>noExplicitConstructor</td><td>style</td><td >Class 'alljoynWrapper' has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.</td></tr>
+       <tr><td colspan='4'><a href='2.html'>cloudEndpoint.h</a></td></tr>
+       <tr><td><a href='2.html#line-7'>7</a></td><td>noCopyConstructor</td><td>style</td><td >'class cloudEndpoint' does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.</td></tr>
+       <tr><td colspan='4'><a href='3.html'>cloudWrapper.h</a></td></tr>
+       <tr><td><a href='3.html#line-8'>8</a></td><td>noCopyConstructor</td><td>style</td><td >'class cloudWrapper' does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.</td></tr>
+       <tr><td colspan='4'><a href='4.html'>main.cc</a></td></tr>
+       <tr><td><a href='4.html#line-50'>50</a></td><td>memleak</td><td>error</td><td class="error">Memory leak: argDet</td></tr>
+       <tr><td colspan='4'><a href='7.html'>mqttBusObject.cc</a></td></tr>
+       <tr><td><a href='7.html#line-44'>44</a></td><td>unusedFunction</td><td>style</td><td >The function 'GetMRAMLHandler' is never used.</td></tr>
+       <tr><td><a href='7.html#line-54'>54</a></td><td>unusedFunction</td><td>style</td><td >The function 'AsyncListenerHandler' is never used.</td></tr>
+       <tr><td><a href='7.html#line-106'>106</a></td><td>unusedFunction</td><td>style</td><td >The function 'SyncListenerHandler' is never used.</td></tr>
+       <tr><td><a href='7.html#line-161'>161</a></td><td>unusedFunction</td><td>style</td><td >The function 'CallbackRegisterHandler' is never used.</td></tr>
+       <tr><td><a href='7.html#line-215'>215</a></td><td>unusedFunction</td><td>style</td><td >The function 'CallbackListenerHandler' is never used.</td></tr>
+       <tr><td><a href='7.html#line-1267'>1267</a></td><td>unusedFunction</td><td>style</td><td >The function 'MethodCallerAsyncCallback' is never used.</td></tr>
+       <tr><td colspan='4'><a href='5.html'>mqttBusObject.h</a></td></tr>
+       <tr><td><a href='5.html#line-114'>114</a></td><td>unusedStructMember</td><td>style</td><td >struct member 'statusInfo::endptID' is never used.</td></tr>
+       <tr><td colspan='4'><a href='6.html'>queueMgmt.cc</a></td></tr>
+       <tr><td><a href='6.html#line-11'>11</a></td><td>uninitMemberVar</td><td>style</td><td >Member variable 'queueMgmt::mqttPtr' is not initialized in the constructor.</td></tr>
+       <tr><td><a href='6.html#line-11'>11</a></td><td>uninitMemberVar</td><td>style</td><td >Member variable 'queueMgmt::filePtr' is not initialized in the constructor.</td></tr>
+       </table>
+      </div>
+      <div id="footer">
+        <p>
+         Cppcheck  - a tool for static C/C++ code analysis</br>
+         </br>
+         Internet: <a href="http://cppcheck.sourceforge.net">http://cppcheck.sourceforge.net</a></br>
+         IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a></br>
+        <p>
+      </div>
+  </body>
+</html>

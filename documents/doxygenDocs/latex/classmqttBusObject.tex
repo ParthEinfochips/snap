@@ -1,0 +1,169 @@
+\hypertarget{classmqttBusObject}{}\section{mqtt\+Bus\+Object Class Reference}
+\label{classmqttBusObject}\index{mqtt\+Bus\+Object@{mqtt\+Bus\+Object}}
+
+
+Inheritance diagram for mqtt\+Bus\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for mqtt\+Bus\+Object\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries mqtt\+Bus\+Object} (ajn\+::\+Bus\+Attachment $\ast$bus, const char $\ast$object\+Name, const char $\ast$object\+Path, aj\+Name\+Service $\ast$aj\+Ptr, std\+::string gateway\+ID)\hypertarget{classmqttBusObject_aba21a90fd01c34effb6670407d0cb5fe}{}\label{classmqttBusObject_aba21a90fd01c34effb6670407d0cb5fe}
+
+\item 
+Q\+Status {\bfseries register\+Bus\+Object} (const char $\ast$interface\+Name)\hypertarget{classmqttBusObject_af6a71a7deaf05376f4ecf2850c104091}{}\label{classmqttBusObject_af6a71a7deaf05376f4ecf2850c104091}
+
+\item 
+Q\+Status {\bfseries Get\+M\+R\+A\+M\+L\+Handler} (std\+::string \&command, std\+::string \&payload)\hypertarget{classmqttBusObject_a5a2222e696c7681a9f46ffea8b41fb5a}{}\label{classmqttBusObject_a5a2222e696c7681a9f46ffea8b41fb5a}
+
+\item 
+Q\+Status {\bfseries Async\+Listener\+Handler} (std\+::string \&command, std\+::string \&payload)\hypertarget{classmqttBusObject_af059f4fdf4154839980041cbfecde69e}{}\label{classmqttBusObject_af059f4fdf4154839980041cbfecde69e}
+
+\item 
+Q\+Status {\bfseries Sync\+Listener\+Handler} (std\+::string \&command, std\+::string \&payload)\hypertarget{classmqttBusObject_a1a6e48f080e8510eddbe9181112a4ff4}{}\label{classmqttBusObject_a1a6e48f080e8510eddbe9181112a4ff4}
+
+\item 
+Q\+Status {\bfseries Callback\+Register\+Handler} (std\+::string \&command, std\+::string \&payload)\hypertarget{classmqttBusObject_a968d7077f427af061dd7ef688bc2fe76}{}\label{classmqttBusObject_a968d7077f427af061dd7ef688bc2fe76}
+
+\item 
+void {\bfseries Callback\+Listener\+Handler} (std\+::string \&command, std\+::string \&payload)\hypertarget{classmqttBusObject_a0b42916c7a87370f96ec108f2f5a30c4}{}\label{classmqttBusObject_a0b42916c7a87370f96ec108f2f5a30c4}
+
+\item 
+Q\+Status {\bfseries process\+Command} (std\+::string \&command, std\+::string \&payload, std\+::string app\+Name)\hypertarget{classmqttBusObject_a57038365c7c109342152b8ffd45c276b}{}\label{classmqttBusObject_a57038365c7c109342152b8ffd45c276b}
+
+\item 
+void {\bfseries temp\+Msg\+Sig} (uint16\+\_\+t endpoint\+ID, std\+::string j\+Son\+String)\hypertarget{classmqttBusObject_aa75d9645ddf5f81d5e519a9a162efbd5}{}\label{classmqttBusObject_aa75d9645ddf5f81d5e519a9a162efbd5}
+
+\item 
+std\+::string {\bfseries get\+App\+Name} (std\+::string topic)\hypertarget{classmqttBusObject_a596f45afa4031365debb97ff3a15a791}{}\label{classmqttBusObject_a596f45afa4031365debb97ff3a15a791}
+
+\item 
+Q\+Status \hyperlink{classmqttBusObject_a5237defc339a71fd864c5067a714d91f}{establish\+Connection} (std\+::string \&payload, std\+::string app\+Name)
+\item 
+Q\+Status {\bfseries send\+To\+Cloud} (std\+::string \&payload, std\+::string app\+Name)\hypertarget{classmqttBusObject_a6fe208528046978aeb00d5723da4a934}{}\label{classmqttBusObject_a6fe208528046978aeb00d5723da4a934}
+
+\item 
+Q\+Status {\bfseries register\+Topic} (std\+::string \&payload, std\+::string app\+Name)\hypertarget{classmqttBusObject_a5fad3fb09b1b2bdc550c4a380023bff6}{}\label{classmqttBusObject_a5fad3fb09b1b2bdc550c4a380023bff6}
+
+\item 
+Q\+Status {\bfseries unregister\+Topic} (std\+::string \&payload, std\+::string app\+Name)\hypertarget{classmqttBusObject_ab5343123caac25a208443a2f385924d3}{}\label{classmqttBusObject_ab5343123caac25a208443a2f385924d3}
+
+\item 
+Q\+Status {\bfseries disconnect} (std\+::string \&payload, std\+::string app\+Name)\hypertarget{classmqttBusObject_a4528546ad08a4cd03e98e86e985c1b10}{}\label{classmqttBusObject_a4528546ad08a4cd03e98e86e985c1b10}
+
+\item 
+void \hyperlink{classmqttBusObject_aff0cc7cb2061522a8f21c3c02550c2de}{connection\+Callback} (uint16\+\_\+t endpoint\+ID)
+\item 
+void {\bfseries message\+Callback} (uint16\+\_\+t endpoint\+ID, std\+::string json\+String)\hypertarget{classmqttBusObject_a01ebd62a56b40bbde78defacb4b4fe41}{}\label{classmqttBusObject_a01ebd62a56b40bbde78defacb4b4fe41}
+
+\item 
+void {\bfseries error\+Callback} (uint16\+\_\+t endpoint\+ID)\hypertarget{classmqttBusObject_ace2c91e900ebccfaa771cefac1e25364}{}\label{classmqttBusObject_ace2c91e900ebccfaa771cefac1e25364}
+
+\item 
+void {\bfseries disconnection\+Callback} (uint16\+\_\+t endpoint\+ID)\hypertarget{classmqttBusObject_aab8ee688fc9dce5626f0c3b5d40f9cc6}{}\label{classmqttBusObject_aab8ee688fc9dce5626f0c3b5d40f9cc6}
+
+\item 
+void {\bfseries Method\+Caller\+Async\+Callback} (std\+::string status, std\+::string payload)\hypertarget{classmqttBusObject_a420c6713f1e2829c25624975f5d1bd14}{}\label{classmqttBusObject_a420c6713f1e2829c25624975f5d1bd14}
+
+\item 
+Q\+Status {\bfseries proxycall} (uint16\+\_\+t ID, std\+::string app\+Name, std\+::string json\+String, std\+::string command, std\+::string res\+Topic)\hypertarget{classmqttBusObject_af5811f8c9caff114e993d0a0417dcdad}{}\label{classmqttBusObject_af5811f8c9caff114e993d0a0417dcdad}
+
+\item 
+void {\bfseries send\+Data\+Response} (uint16\+\_\+t ID, std\+::string topic, std\+::string json\+String)\hypertarget{classmqttBusObject_ab678fbb4aec7715e14a4bc56afb35b00}{}\label{classmqttBusObject_ab678fbb4aec7715e14a4bc56afb35b00}
+
+\item 
+Q\+Status {\bfseries send\+Signal} (uint16\+\_\+t ID, std\+::string app\+Name, std\+::string json\+String, std\+::string command)\hypertarget{classmqttBusObject_a47bc33c315d4a7f8c4097910143f9e4e}{}\label{classmqttBusObject_a47bc33c315d4a7f8c4097910143f9e4e}
+
+\item 
+Q\+Status {\bfseries sub\+Unsub\+Android\+Topic} (uint16\+\_\+t endpoint\+ID, std\+::string unique\+ID, std\+::string act\+Flag)\hypertarget{classmqttBusObject_ab4100f69c3df2d7e9564b4c4b8a0623d}{}\label{classmqttBusObject_ab4100f69c3df2d7e9564b4c4b8a0623d}
+
+\item 
+Q\+Status {\bfseries android\+Proxy} (uint16\+\_\+t id, std\+::string gw\+ID, std\+::string json\+Str, std\+::string topic, std\+::string res\+Topic)\hypertarget{classmqttBusObject_aaadc1efda038b8c185973931fe0cba0f}{}\label{classmqttBusObject_aaadc1efda038b8c185973931fe0cba0f}
+
+\item 
+void {\bfseries set\+App\+Name} (std\+::string temp\+Topic)\hypertarget{classmqttBusObject_a87a21ea77d4dc350915005ed50e78b96}{}\label{classmqttBusObject_a87a21ea77d4dc350915005ed50e78b96}
+
+\item 
+std\+::string {\bfseries get\+Andr\+Key} (std\+::string topic)\hypertarget{classmqttBusObject_ab29e7b43f39fbe3ca64458b2547b9f41}{}\label{classmqttBusObject_ab29e7b43f39fbe3ca64458b2547b9f41}
+
+\item 
+std\+::string {\bfseries get\+Command} (std\+::string topic)\hypertarget{classmqttBusObject_a68b3a218ee433aff564841ec6363ea34}{}\label{classmqttBusObject_a68b3a218ee433aff564841ec6363ea34}
+
+\item 
+std\+::string {\bfseries get\+Gw\+I\+D\+Andr} (std\+::string topic)\hypertarget{classmqttBusObject_accc0f57dfd1979dea6155013b02259f1}{}\label{classmqttBusObject_accc0f57dfd1979dea6155013b02259f1}
+
+\item 
+void {\bfseries set\+Org\+ID} (std\+::string org\+Id)\hypertarget{classmqttBusObject_a7ff5eae0237b188ed036509dbbb4cfd9}{}\label{classmqttBusObject_a7ff5eae0237b188ed036509dbbb4cfd9}
+
+\item 
+void \hyperlink{classmqttBusObject_abef9598788ba1f757a6fb88664b6601f}{connection\+Signal\+Function} ()
+\item 
+void {\bfseries error\+Signal\+Function} ()\hypertarget{classmqttBusObject_aa6736a581db8c961ae2dfd3bfcb32dcf}{}\label{classmqttBusObject_aa6736a581db8c961ae2dfd3bfcb32dcf}
+
+\item 
+void {\bfseries disconnect\+Signal\+Function} ()\hypertarget{classmqttBusObject_a9a68c8f7c6fce4b6d8d1cdd5b439270e}{}\label{classmqttBusObject_a9a68c8f7c6fce4b6d8d1cdd5b439270e}
+
+\item 
+std\+::string {\bfseries android\+Topic} (std\+::string topic)\hypertarget{classmqttBusObject_af01485d39f0f2d10ac3dbdf9be41e5f8}{}\label{classmqttBusObject_af01485d39f0f2d10ac3dbdf9be41e5f8}
+
+\item 
+\hyperlink{classMqttApi}{Mqtt\+Api} $\ast$ {\bfseries Get\+Mqtt\+Api\+Ptr} ()\hypertarget{classmqttBusObject_af87e9164d5f6b64fc094faac01379db5}{}\label{classmqttBusObject_af87e9164d5f6b64fc094faac01379db5}
+
+\item 
+void \hyperlink{classmqttBusObject_a44e14e25f38593ffd88dc60b975d3bb5}{connection\+Thread\+Function} (const char $\ast$app\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \hyperlink{structconnectionMap}{connection\+Map} $>$ {\bfseries active\+Connection\+List}\hypertarget{classmqttBusObject_a825383dfd4be9b233845da2c8576a7aa}{}\label{classmqttBusObject_a825383dfd4be9b233845da2c8576a7aa}
+
+\item 
+std\+::vector$<$ \hyperlink{structstatusInfo}{status\+Info} $>$ {\bfseries status\+Vec}\hypertarget{classmqttBusObject_aa04056815cd3100224baa85149e86662}{}\label{classmqttBusObject_aa04056815cd3100224baa85149e86662}
+
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{classqueueMgmt}{queue\+Mgmt} $\ast$ $>$ {\bfseries queue\+Obj\+Map}\hypertarget{classmqttBusObject_affeb9e39deee14917538c8df0769b4ce}{}\label{classmqttBusObject_affeb9e39deee14917538c8df0769b4ce}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{mqtt\+Bus\+Object@{mqtt\+Bus\+Object}!connection\+Callback@{connection\+Callback}}
+\index{connection\+Callback@{connection\+Callback}!mqtt\+Bus\+Object@{mqtt\+Bus\+Object}}
+\subsubsection[{\texorpdfstring{connection\+Callback(uint16\+\_\+t endpoint\+I\+D)}{connectionCallback(uint16_t endpointID)}}]{\setlength{\rightskip}{0pt plus 5cm}void mqtt\+Bus\+Object\+::connection\+Callback (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{endpoint\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{classmqttBusObject_aff0cc7cb2061522a8f21c3c02550c2de}{}\label{classmqttBusObject_aff0cc7cb2061522a8f21c3c02550c2de}
+Callback functions to be utilized by Threads
+
+Callback functions utilized by Threads. Will push the requests to corresponding Queues \& fire Signals upon turn. Call these functions from mqtt\+Endpoint objects with the endpoint\+ID as the parameter. \index{mqtt\+Bus\+Object@{mqtt\+Bus\+Object}!connection\+Signal\+Function@{connection\+Signal\+Function}}
+\index{connection\+Signal\+Function@{connection\+Signal\+Function}!mqtt\+Bus\+Object@{mqtt\+Bus\+Object}}
+\subsubsection[{\texorpdfstring{connection\+Signal\+Function()}{connectionSignalFunction()}}]{\setlength{\rightskip}{0pt plus 5cm}void mqtt\+Bus\+Object\+::connection\+Signal\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmqttBusObject_abef9598788ba1f757a6fb88664b6601f}{}\label{classmqttBusObject_abef9598788ba1f757a6fb88664b6601f}
+Signal functions that will utilize the queue \index{mqtt\+Bus\+Object@{mqtt\+Bus\+Object}!connection\+Thread\+Function@{connection\+Thread\+Function}}
+\index{connection\+Thread\+Function@{connection\+Thread\+Function}!mqtt\+Bus\+Object@{mqtt\+Bus\+Object}}
+\subsubsection[{\texorpdfstring{connection\+Thread\+Function(const char $\ast$app\+Name)}{connectionThreadFunction(const char *appName)}}]{\setlength{\rightskip}{0pt plus 5cm}void mqtt\+Bus\+Object\+::connection\+Thread\+Function (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{app\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classmqttBusObject_a44e14e25f38593ffd88dc60b975d3bb5}{}\label{classmqttBusObject_a44e14e25f38593ffd88dc60b975d3bb5}
+Thread Function used in connect() \index{mqtt\+Bus\+Object@{mqtt\+Bus\+Object}!establish\+Connection@{establish\+Connection}}
+\index{establish\+Connection@{establish\+Connection}!mqtt\+Bus\+Object@{mqtt\+Bus\+Object}}
+\subsubsection[{\texorpdfstring{establish\+Connection(std\+::string \&payload, std\+::string app\+Name)}{establishConnection(std::string &payload, std::string appName)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status mqtt\+Bus\+Object\+::establish\+Connection (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{payload, }
+\item[{std\+::string}]{app\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classmqttBusObject_a5237defc339a71fd864c5067a714d91f}{}\label{classmqttBusObject_a5237defc339a71fd864c5067a714d91f}
+Fetch only host \& port for connection 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mqtt\+Bus\+Object.\+h\item 
+mqtt\+Bus\+Object.\+cc\end{DoxyCompactItemize}
